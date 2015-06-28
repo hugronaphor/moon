@@ -364,7 +364,7 @@ html.js .no-js {
 }
 
 .progress .bar {
-  background: white url(drupal/progress.gif);
+  background: #fff url(drupal/progress.gif);
   border: 1px solid #035;
   height: 18px;
 }
