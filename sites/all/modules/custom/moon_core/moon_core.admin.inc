@@ -22,6 +22,22 @@ function moon_core_admin_form() {
     '#default_value' => variable_get('moon_phone'),
   ];
 
+  $form['general']['moon_contact_page_top_tel_1'] = [
+    '#type' => 'textfield',
+    '#title' => t('Top info of Contact Page Phone Number 1'),
+    '#default_value' => variable_get('moon_contact_page_top_tel_1'),
+  ];
+  $form['general']['moon_contact_page_top_tel_2'] = [
+    '#type' => 'textfield',
+    '#title' => t('Top info of Contact Page Phone Number 2'),
+    '#default_value' => variable_get('moon_contact_page_top_tel_2'),
+  ];
+  $form['general']['moon_contact_page_top_email'] = [
+    '#type' => 'textfield',
+    '#title' => t('Top info of Contact Page Email'),
+    '#default_value' => variable_get('moon_contact_page_top_email'),
+  ];
+
   // Start Link 1
 //  $form['general']['link_1'] = array(
 //    '#type' => 'fieldset',

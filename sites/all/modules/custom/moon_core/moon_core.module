@@ -73,17 +73,21 @@ function moon_core_node_view($node, $view_mode) {
  * Implements hook_block_info().
  */
 function moon_core_block_info() {
-  $blocks = array();
+  $blocks = [];
 
-  $blocks['moon_social'] = array(
+  $blocks['moon_social'] = [
     'info' => t('Moon social block'),
     'cache' => DRUPAL_CACHE_GLOBAL,
-  );
+  ];
 
-  $blocks['moon_footer_contact'] = array(
+  $blocks['moon_footer_contact'] = [
     'info' => t('Moon Footer Contact'),
     'cache' => DRUPAL_CACHE_GLOBAL,
-  );
+  ];
+  $blocks['moon_contact_page_top'] = [
+    'info' => t('Contact Page Top'),
+    'cache' => DRUPAL_NO_CACHE,
+  ];
 
   return $blocks;
 }
@@ -92,7 +96,7 @@ function moon_core_block_info() {
  * Implements hook_block_view().
  */
 function moon_core_block_view($delta = '') {
-  $block = array();
+  $block = [];
 
   switch ($delta) {
     case 'moon_social':
@@ -101,9 +105,27 @@ function moon_core_block_view($delta = '') {
       break;
 
     case 'moon_footer_contact':
-      $mini_footer = variable_get('moon_phone');
-      if ($mini_footer) {
-        $block['content'] = '<div id="wrapp-footer_contact">' . $mini_footer . '</div>';
+      $footer_contact = variable_get('moon_phone');
+      if ($footer_contact) {
+        $block['content'] = '<div id="wrapp-footer_contact">' . $footer_contact . '</div>';
+      }
+      break;
+
+    case 'moon_contact_page_top':
+      $vars['tel_1'] = variable_get('moon_contact_page_top_tel_1');
+
+      // At least 
+      if (!empty($vars['tel_1']) || !empty($vars['email'])) {
+        $vars['tel_2'] = variable_get('moon_contact_page_top_tel_2');
+        $vars['email'] = variable_get('moon_contact_page_top_email');
+
+        // Detect Mobile devices.
+        require_once drupal_get_path('module', 'moon_core') . '/includes/Mobile_Detect.php';
+        $detect = new Mobile_Detect;
+        $vars['is_mobile'] = $detect->isMobile();
+
+        $block['title'] = t('Contact Us');
+        $block['content'] = theme('moon_contact_page_top', $vars);
       }
       break;
   }
@@ -142,6 +164,11 @@ function moon_core_theme($existing, $type, $theme, $path) {
   return array(
     'moon_social' => array(
       'template' => 'moon-social',
+      'arguments' => array('vars' => NULL),
+      'path' => $path . '/theme',
+    ),
+    'moon_contact_page_top' => array(
+      'template' => 'moon-contact-page-top',
       'arguments' => array('vars' => NULL),
       'path' => $path . '/theme',
     ),
