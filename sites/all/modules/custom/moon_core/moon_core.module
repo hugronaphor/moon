@@ -48,44 +48,9 @@ function _xgaby_core_node_get_ajax($nid, $view_mode) {
 }
 
 /**
- * Implements hook_block_info().
- */
-function xgaby_core_block_info() {
-  $blocks = array();
-
-  $blocks['xgaby_social'] = array(
-    'info' => t('XGaby social block'),
-    'cache' => DRUPAL_CACHE_GLOBAL,
-  );
-
-  $blocks['xgaby_home_main'] = array(
-    'info' => t('Main Block on home page'),
-    'cache' => DRUPAL_CACHE_GLOBAL,
-  );
-
-  $blocks['xgaby_mini_contact'] = array(
-    'info' => t('Bottom Contact Mini'),
-    'cache' => DRUPAL_CACHE_GLOBAL,
-  );
-
-  $blocks['xgaby_find_me_links'] = array(
-    'info' => t('Find Me Links'),
-    'cache' => DRUPAL_CACHE_GLOBAL,
-  );
-
-  $blocks['xgaby_homepage_slider'] = array(
-    'info' => t('Homepage slider.'),
-    'cache' => DRUPAL_CACHE_GLOBAL,
-  );
-
-  return $blocks;
-}
-
-/**
  * Implements hook_node_view().
  */
 function moon_core_node_view($node, $view_mode) {
-
 
   if ($node->type != 'photo') {
     return;
@@ -93,7 +58,6 @@ function moon_core_node_view($node, $view_mode) {
 
   switch ($view_mode) {
     case 'teaser':
-
       if (!empty($node->field_image_multiple[LANGUAGE_NONE])) {
         foreach ($node->content['field_image_multiple'] as $key => $value) {
           if (is_int($key) && $key > 0) {
@@ -101,80 +65,45 @@ function moon_core_node_view($node, $view_mode) {
           }
         }
       }
-
       break;
   }
 }
 
 /**
+ * Implements hook_block_info().
+ */
+function moon_core_block_info() {
+  $blocks = array();
+
+  $blocks['moon_social'] = array(
+    'info' => t('Moon social block'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+
+  $blocks['moon_footer_contact'] = array(
+    'info' => t('Moon Footer Contact'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+
+  return $blocks;
+}
+
+/**
  * Implements hook_block_view().
  */
-function xgaby_core_block_view($delta = '') {
+function moon_core_block_view($delta = '') {
   $block = array();
 
   switch ($delta) {
-    case 'xgaby_social':
-      $vars = _xgaby_core_get_social_data();
-      $block['content'] = theme('xgaby_social', $vars);
+    case 'moon_social':
+      $vars = _moon_core_get_social_data();
+      $block['content'] = theme('moon_social', $vars);
       break;
 
-    case 'xgaby_home_main':
-      $main_menu = menu_navigation_links('main-menu');
-      $vars['main_menu'] = theme('links__system_main_menu', [
-        'links' => $main_menu,
-        'attributes' => [
-          'id' => 'main-menu',
-          'class' => ['links', 'inline', 'clearfix'],
-        #'heading' => t('Main menu'),
-        ]]
-      );
-
-      $vars['site_name'] = variable_get('site_name', 'XGABYMOOR');
-      $block['content'] = theme('xgaby_home_main', $vars);
-      break;
-
-    case 'xgaby_mini_contact':
-      $mini_footer = variable_get('xgaby_mini_contact');
+    case 'moon_footer_contact':
+      $mini_footer = variable_get('moon_phone');
       if ($mini_footer) {
-        $block['content'] = '<div id="wrapp-mini_contact">' . $mini_footer . '</div>';
-      }
-      break;
-
-    case 'xgaby_find_me_links':
-
-      $vars = ['links' => []];
-      $quantity = range(0, 4);
-
-      foreach ($quantity as $source) {
-        ++$source;
-        $link = variable_get('xgaby_find_me_link_' . $source, '');
-        $title = variable_get('xgaby_find_me_title_' . $source, '');
-        if ($title && $link) {
-          $vars['links'][$title] = $link;
-        }
-      }
-
-      if (!empty($vars['links'])) {
-        $block['subject'] = t('Find me live on');
-        $block['content'] = theme('xgaby_find_me_links', $vars);
-      }
-      break;
-
-    case 'xgaby_homepage_slider':
-      $files = file_scan_directory(drupal_get_path('theme', 'xgaby') . '/images/home_slider', '/[png|jpg|jpeg]/');
-      ksort($files);
-      $output = '<ul id="h-slider">';
-      $i = 0;
-      foreach ($files as $uri => $file_data) {
-        $output .= '<li class="home-slide home-slide-' . $i . '">';
-        $output .= '<img src="' . $uri . '" >';
-        $output .= '</li>';
-        ++$i;
-      }
-      $output = $output . '<li>';
-      $output = '';
-      if (isset($output)) {
-        $block['content'] = $output;
+        $block['content'] = '<div id="wrapp-footer_contact">' . $mini_footer . '</div>';
       }
       break;
   }
@@ -183,52 +112,19 @@ function xgaby_core_block_view($delta = '') {
 }
 
 /**
- * Helper funtion.
- * 
- * Detect the total number of bows.
- * @todo: Cache. Join Article type and check for bows:?
- */
-//function _papio_core_count_bows() {
-//
-//  $query = db_select('node', 'n')
-//    ->fields('n')
-//    ->condition('type', 'article')
-//    ->condition('status', 1);
-//  $bows_count = $query->execute()->rowCount();
-//
-//  if ($bows_count) {
-//    // Add additional zeros in order to have at least 4 digits number.
-//    $bows_count_array = str_split($bows_count);
-//    $bows_count_array_count = count($bows_count_array);
-//
-//    if ($bows_count_array_count < 4) {
-//      for ($i = 1; $i <= 4 - $bows_count_array_count; $i++) {
-//        $additional_zero[] = 0;
-//      }
-//    }
-//
-//    if (isset($additional_zero)) {
-//      $bows_count_array = array_merge($additional_zero, $bows_count_array);
-//    }
-//  }
-//
-//  return $bows_count_array;
-//}
-
-/**
  * Helper function to retrieve the social buttons data.
  *
  * @todo Re-thing the logic. Be beautiful.
  */
-function _xgaby_core_get_social_data() {
+function _moon_core_get_social_data() {
   static $vars = [];
   if (!empty($vars)) {
     return $vars;
   }
   $footer_vars = [
-    'vine_site_url',
-    'vimeo_site_url',
     'twitter_site_url',
+    'fb_site_url',
+    'instagram_site_url',
   ];
 
   foreach ($footer_vars as $var_name) {
@@ -242,43 +138,14 @@ function _xgaby_core_get_social_data() {
 /**
  * Implements hook_theme().
  */
-function xgaby_core_theme($existing, $type, $theme, $path) {
+function moon_core_theme($existing, $type, $theme, $path) {
   return array(
-    'xgaby_social' => array(
-      'template' => 'xgaby-social',
-      'arguments' => array('vars' => NULL),
-      'path' => $path . '/theme',
-    ),
-    'xgaby_home_main' => array(
-      'template' => 'xgaby-home-main',
-      'arguments' => array('vars' => NULL),
-      'path' => $path . '/theme',
-    ),
-    'xgaby_find_me_links' => array(
-      'template' => 'xgaby-find-me-links',
+    'moon_social' => array(
+      'template' => 'moon-social',
       'arguments' => array('vars' => NULL),
       'path' => $path . '/theme',
     ),
   );
-}
-
-/**
- * Implements hook_node_view().
- */
-function HOOK_node_view($node, $view_mode) {
-
-  switch ($view_mode) {
-    case 'teaser':
-      if (!empty($node->content['field_new'][0]['#markup'])) {
-        $node->content['field_new'][0]['#markup'] = t('New!');
-      }
-      else {
-        // Avoid empty field.
-        unset($node->content['field_new']);
-      }
-
-      break;
-  }
 }
 
 #function fibonacci() {
@@ -291,12 +158,6 @@ function HOOK_node_view($node, $view_mode) {
 #        yield $current;
 #    }
 #}
-
-function xgaby_core_preprocess_html(&$vars) {
-  if (current_path() == 'homepage') {
-    drupal_add_css('html, body {height: 100%;}html{overflow-y: hidden;}body{overflow-y: scroll;background-color: #000000;}', 'inline');
-  }
-}
 
 function HOOK_preprocess_page(&$variables) {
 
@@ -316,14 +177,4 @@ function HOOK_preprocess_views_view(&$vars) {
   if ($view->name == 'main_list' && $view->current_display == 'main_list') {
     //dsm($view, 'main list view');
   }
-}
-
-/**
- * Implements hook_entity_info_alter().
- */
-function xgaby_core_entity_info_alter(&$entity_info) {
-  $entity_info['node']['view modes']['popular'] = [
-    'label' => t('Popular'),
-    'custom settings' => FALSE,
-  ];
 }
