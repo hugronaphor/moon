@@ -1174,7 +1174,7 @@ tr.selected td {
 }
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1435262219');
+  background-image: url('../images/progress.gif?1435658814');
 }
 
 /**
@@ -1256,7 +1256,191 @@ tr.selected td {
 }
 /* SMACSS theme rules */
 /* @import "theme-A"; */
-/* @import "theme-B"; */
+/* @import "theme-B"; desch*/
 .hidden {
   display: none;
+}
+
+@font-face {
+  font-family: "MYRIADPRO-REGULAR";
+  src: url("../fonts/MYRIADPRO-REGULAR.OTF");
+}
+body {
+  margin: auto;
+  text-align: center;
+  font-family: "MYRIADPRO-REGULAR" Regular;
+}
+
+.pane-content {
+  max-width: 960px;
+  margin: auto;
+}
+
+/*
+@media screen and (min-width: 769px) {
+  .pane-content{
+    width: 960px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-device-width: 481px) and (max-device-width: 768px) {
+  .pane-content{
+    width: 50%;
+    max-width: 450px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .pane-content{
+    width: 50%;
+    max-width: 450px;
+    margin: auto;
+  }
+}
+*/
+.pane-content .menu-main-menu {
+  text-align: center;
+  float: none;
+  margin: 45px auto 30px;
+  border-bottom: 2px solid #000;
+  border-top: 2px solid #000;
+}
+.pane-content .menu-main-menu li {
+  list-style-type: none;
+  display: inline-block;
+}
+.pane-content .menu-main-menu a {
+  text-decoration: none;
+  color: #000000;
+  text-transform: uppercase;
+  font-family: "MYRIADPRO-REGULAR" Regular;
+}
+.pane-content .menu-main-menu a:hover {
+  color: #daa675;
+}
+
+@media screen and (max-device-width: 372px) {
+  #main-menu, .menu-main-menu {
+    width: 93%;
+    display: inline-block;
+    max-width: 365px;
+    padding: 2px;
+  }
+  #main-menu li, .menu-main-menu li {
+    display: inline;
+    margin: 0px 3px;
+    line-height: 22px;
+  }
+  #main-menu a, .menu-main-menu a {
+    font-size: 14px;
+  }
+}
+@media screen and (min-device-width: 373px) and (max-device-width: 524px) {
+  #main-menu, .menu-main-menu {
+    width: 95%;
+    display: inline-block;
+    max-width: 366px;
+    padding: 2px;
+  }
+  #main-menu li, .menu-main-menu li {
+    display: inline;
+    margin: 0 5px;
+  }
+  #main-menu a, .menu-main-menu a {
+    font-size: 15px;
+  }
+}
+@media screen and (min-device-width: 525px) {
+  #main-menu, .menu-main-menu {
+    display: inline-block;
+    width: 93%;
+    max-width: 400px;
+    line-height: 20px;
+    padding: 2px;
+  }
+  #main-menu li, .menu-main-menu li {
+    display: inline;
+    margin: 0 13px;
+  }
+  #main-menu a, .menu-main-menu a {
+    font-size: 16px;
+  }
+}
+.pane-content .pane-moon-core-moon-contact-page-top h2 {
+  color: #daa675;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.pane-content .pane-moon-core-moon-contact-page-top span {
+  display: block;
+  line-height: 1.7;
+  font-weight: 500;
+  font-size: 19px;
+  font-family: "MYRIADPRO-REGULAR" Regular;
+}
+.pane-content .pane-moon-core-moon-contact-page-top a {
+  text-decoration: none;
+  color: #000;
+  font-size: 19px;
+}
+
+.pane-moon-core-moon-social .pane-content .social-buttons {
+  margin: 25px 0 0 0;
+}
+.pane-moon-core-moon-social .pane-content .social-buttons ul {
+  padding: 0;
+}
+.pane-moon-core-moon-social .pane-content .social-buttons li {
+  display: inline-block;
+}
+.pane-moon-core-moon-social .pane-content .social-buttons a {
+  color: #daa675;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 13px;
+  font-size: 19px;
+  font-family: "MYRIADPRO-REGULAR" Regular;
+}
+
+.views-widget-filter-field_photo_type_tid .views-widget .form-item-type .bef-select-as-links a {
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  text-decoration: none;
+  color: #000000;
+  text-transform: uppercase;
+}
+.views-widget-filter-field_photo_type_tid .views-widget .form-item-type .bef-select-as-links a:hover {
+  color: #daa675;
+}
+.views-widget-filter-field_photo_type_tid .views-widget .form-item-type .bef-select-as-links .form-type-bef-link {
+  display: inline-block;
+  position: relative;
+}
+
+.view-content .views-row {
+  float: left;
+}
+
+.page-photo .pane-content .social-buttons {
+  text-align: right;
+}
+.page-photo .pane-content .social-buttons li {
+  display: inline-block;
+  text-align: right;
+}
+.page-photo .pane-content .social-buttons a {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 10px;
+  font-size: 16px;
+}
+.page-photo .pane-content .social-buttons a:hover {
+  color: #daa675;
+}
+.page-photo .pane-moon-core-moon-footer-contact {
+  text-align: right;
 }
