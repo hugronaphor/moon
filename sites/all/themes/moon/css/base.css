@@ -1300,6 +1300,10 @@ body {
   }
 }
 */
+.pane-page-logo {
+  margin-top: 60px;
+}
+
 .pane-content .menu-main-menu {
   text-align: center;
   float: none;
@@ -1385,6 +1389,7 @@ body {
   text-decoration: none;
   color: #000;
   font-size: 19px;
+  line-height: 2;
 }
 
 .pane-moon-core-moon-social .pane-content .social-buttons {
