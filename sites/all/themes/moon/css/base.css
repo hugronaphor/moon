@@ -1314,6 +1314,7 @@ body {
 .pane-content .menu-main-menu li {
   list-style-type: none;
   display: inline-block;
+  margin-top: 2px;
 }
 .pane-content .menu-main-menu a {
   text-decoration: none;
@@ -1406,8 +1407,98 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   margin: 13px;
+}
+
+.pane-content h2.pane-title {
+  font-weight: normal;
+  margin: 40px 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.contact-form {
+  margin-bottom: 40px;
+}
+.contact-form .form-type-textfield input {
+  width: 420px;
+  max-width: 100%;
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #999;
+  padding: 6px 4px;
+  outline: none;
+  margin: 13px auto;
   font-size: 19px;
   font-family: "MYRIADPRO-REGULAR" Regular;
+  box-shadow: 1px 1px 1px #ccc;
+}
+.contact-form .form-type-textfield label {
+  margin-top: 25px;
+  margin-left: 15px;
+  text-align: left;
+  clear: both;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  color: #999;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.7px;
+}
+.contact-form .form-type-textarea {
+  display: inline-block;
+  position: relative;
+}
+.contact-form .form-type-textarea textarea {
+  width: 430px;
+  max-width: 100%;
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #999;
+  padding: 6px 4px;
+  outline: none;
+  margin: 13px auto;
+  font-size: 19px;
+  font-family: "MYRIADPRO-REGULAR" Regular;
+  box-shadow: 1px 1px 1px #ccc;
+}
+.contact-form .form-type-textarea textarea:hover {
+  background: linear-gradient(45deg, rgba(249, 173, 11, 0.7) 0%, rgba(13, 40, 255, 0) 50%, rgba(13, 40, 255, 0) 100%), linear-gradient(135deg, rgba(255, 13, 87, 0) 0%, rgba(255, 13, 87, 0) 50%, rgba(255, 151, 13, 0.7) 100%);
+}
+.contact-form .form-type-textarea label {
+  margin-top: 25px;
+  text-align: left;
+  clear: both;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  color: #999;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.7px;
+  margin-left: -48%;
+}
+.contact-form .form-type-textarea .grippie {
+  background: none;
+  border: none;
+}
+.contact-form .form-actions {
+  height: 60px;
+}
+.contact-form .form-actions .form-submit {
+  color: #daa675;
+  background-color: #fff;
+  border: 1px solid #daa675;
+  line-height: 2.5;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+.contact-form .form-actions .form-submit:hover {
+  border: 2px solid #daa675;
+  font-size: 16px;
+  margin-top: 0;
 }
 
 .views-widget-filter-field_photo_type_tid .views-widget .form-item-type .bef-select-as-links a {
