@@ -24,7 +24,7 @@ function moon_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
   $form['subject']['#attributes']['placeholder'] = t("SUBJECT");
   $form['subject']['#title_display'] = 'invisible';
 
-  $form['message']['#attributes']['placeholder'] = t("YURE MESSAGE");
+  $form['message']['#attributes']['placeholder'] = t("YOUR MESSAGE");
   $form['message']['#title_display'] = 'invisible';
 
   unset($form['copy']);
