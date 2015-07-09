@@ -1319,6 +1319,9 @@ body {
 .pane-content .menu-main-menu a:hover {
   color: #daa675;
 }
+.pane-content .menu-main-menu .active {
+  color: #daa675;
+}
 
 @media screen and (max-device-width: 372px) {
   #main-menu, .menu-main-menu {
@@ -1507,6 +1510,9 @@ body {
 .view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a:hover {
   color: #daa675;
 }
+.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content .active {
+  color: #daa675;
+}
 
 .pane-photo .view-content .views-row {
   display: inline-flex;
@@ -1536,6 +1542,11 @@ body {
   text-align: right;
 }
 
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row .node-photo .changeme1 .field-name-field-image-multiple img {
+  width: 100%;
+  height: 100%;
+}
+
 .pane-menu-menu-language-custom .pane-content .menu-menu-language-custom {
   text-align: right;
 }
@@ -1550,6 +1561,9 @@ body {
   font-size: 16px;
 }
 .pane-menu-menu-language-custom .pane-content .menu-menu-language-custom a:hover {
+  color: #daa675;
+}
+.pane-menu-menu-language-custom .pane-content .menu-menu-language-custom .active {
   color: #daa675;
 }
 

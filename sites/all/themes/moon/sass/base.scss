@@ -99,8 +99,12 @@ body {
       color: #daa675;
     }
   }
+  .active{
+    color: $color;
+  }
 
 }
+
 
 
 @media screen and (max-device-width: 372px) {
@@ -311,6 +315,9 @@ body {
                 color: $color;
               }
             }
+            .active{
+              color: $color;
+            }
           }
         }
       }
@@ -357,6 +364,27 @@ body {
   }
 }
 
+.page-taxonomy{
+  .pane-photo{
+    .pane-content{
+      .view-display-id-photo_main_all{
+        .views-row{
+          .node-photo{
+            .changeme1{
+              .field-name-field-image-multiple{
+                img{
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+
+          }
+        }
+      }
+    }
+  }
+}
 
 //about
 
@@ -376,6 +404,9 @@ body {
         &:hover {
           color: $color;
         }
+      }
+      .active{
+        color: $color;
       }
     }
 
