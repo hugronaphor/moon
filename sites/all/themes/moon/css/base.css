@@ -1279,13 +1279,13 @@ body {
   padding: 0 10px;
 }
 
-@media screen and (min-width: 814px) {
+@media screen and (min-width: 815px) {
   .page-taxonomy .pane-content {
-    width: 814px;
+    width: 815px;
     margin: auto;
   }
 }
-@media only screen and (max-device-width: 813px) {
+@media only screen and (max-device-width: 814px) {
   .page-taxonomy .pane-content {
     max-width: 433px;
     margin: auto;
