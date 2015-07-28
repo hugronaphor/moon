@@ -1269,6 +1269,8 @@ body {
   margin: auto;
   text-align: center;
   font-family: "MYRIADPRO-REGULAR" Regular;
+  letter-spacing: 2px;
+  font-size: 13px;
 }
 
 .pane-content {
@@ -1285,7 +1287,7 @@ body {
 }
 @media only screen and (max-device-width: 813px) {
   .page-taxonomy .pane-content {
-    max-width: 407px;
+    max-width: 433px;
     margin: auto;
   }
 }
@@ -1302,8 +1304,8 @@ body {
   text-align: center;
   float: none;
   margin: 45px auto 30px;
-  border-bottom: 2px solid #000;
-  border-top: 2px solid #000;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
 }
 .pane-content .menu-main-menu li {
   list-style-type: none;
@@ -1323,7 +1325,7 @@ body {
   color: #daa675;
 }
 
-@media screen and (max-device-width: 372px) {
+@media screen and (max-device-width: 376px) {
   #main-menu, .menu-main-menu {
     display: inline-block;
     max-width: 365px;
@@ -1335,10 +1337,10 @@ body {
     line-height: 22px;
   }
   #main-menu a, .menu-main-menu a {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
-@media screen and (min-device-width: 373px) and (max-device-width: 524px) {
+@media screen and (min-device-width: 377px) and (max-device-width: 524px) {
   #main-menu, .menu-main-menu {
     display: inline-block;
     max-width: 366px;
@@ -1355,13 +1357,13 @@ body {
 @media screen and (min-device-width: 525px) {
   #main-menu, .menu-main-menu {
     display: inline-block;
-    max-width: 400px;
+    max-width: 425px;
     line-height: 20px;
     padding: 2px;
   }
   #main-menu li, .menu-main-menu li {
     display: inline;
-    margin: 0 13px;
+    margin: 0 10px;
   }
   #main-menu a, .menu-main-menu a {
     font-size: 16px;
@@ -1370,7 +1372,7 @@ body {
 .pane-content .pane-moon-core-moon-contact-page-top h2 {
   color: #daa675;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   text-transform: uppercase;
 }
 .pane-content .pane-moon-core-moon-contact-page-top span {
@@ -1403,29 +1405,41 @@ body {
   margin: 13px;
 }
 
+@media screen and (max-device-width: 415px) {
+  .pane-moon-core-moon-social .pane-content .social-buttons a {
+    margin: 5px;
+    font-size: 14px;
+  }
+}
+@media screen and (min-device-width: 416px) {
+  .pane-moon-core-moon-social .pane-content .social-buttons a {
+    margin: 10px;
+    font-size: 19px;
+  }
+}
 .pane-content h2.pane-title {
   font-weight: normal;
   margin: 40px 0 10px 0;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .contact-form {
   margin-bottom: 40px;
 }
 .contact-form .form-type-textfield input {
-  width: 420px;
-  max-width: 100%;
+  width: 87%;
+  max-width: 355px;
   display: inline-block;
   background: #fff;
   border: 1px solid #999;
-  padding: 6px 4px;
+  padding: 10px 12px;
   outline: none;
   margin: 13px auto;
-  font-size: 14px;
+  font-size: 13px;
   font-family: "MYRIADPRO-REGULAR" Regular;
   box-shadow: 1px 1px 1px #ccc;
+  letter-spacing: 2px;
 }
 .contact-form .form-type-textfield label {
   margin-top: 25px;
@@ -1437,25 +1451,24 @@ body {
   position: absolute;
   color: #999;
   text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.7px;
+  font-size: 13px;
 }
 .contact-form .form-type-textarea {
   display: inline-block;
   position: relative;
 }
 .contact-form .form-type-textarea textarea {
-  width: 430px;
-  max-width: 100%;
+  width: 95%;
   display: inline-block;
   background: #fff;
   border: 1px solid #999;
-  padding: 6px 4px;
+  padding: 10px 12px;
   outline: none;
   margin: 13px auto;
-  font-size: 14px;
+  font-size: 13px;
   font-family: "MYRIADPRO-REGULAR" Regular;
   box-shadow: 1px 1px 1px #ccc;
+  letter-spacing: 2px;
 }
 .contact-form .form-type-textarea label {
   margin-top: 25px;
@@ -1466,8 +1479,7 @@ body {
   position: absolute;
   color: #999;
   text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.7px;
+  font-size: 13px;
   margin-left: -48%;
 }
 .contact-form .form-type-textarea .grippie {
@@ -1485,10 +1497,10 @@ body {
   padding: 5px 15px;
   text-transform: uppercase;
   margin-top: 1px;
+  letter-spacing: 2px;
 }
 .contact-form .form-actions .form-submit:hover {
   border: 2px solid #daa675;
-  font-size: 16px;
   margin-top: 0;
 }
 
@@ -1505,7 +1517,7 @@ body {
   text-decoration: none;
   color: #000000;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 13px;
 }
 .view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a:hover {
   color: #daa675;
@@ -1533,7 +1545,6 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   margin: 0 0 0 13px;
-  font-size: 16px;
 }
 .page-taxonomy .pane-content .social-buttons a:hover, .page-about .pane-content .social-buttons a:hover, .page-video .pane-content .social-buttons a:hover {
   color: #daa675;
@@ -1542,9 +1553,12 @@ body {
   text-align: right;
 }
 
-.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row .node-photo .changeme1 .field-name-field-image-multiple img {
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row .node-photo .field-name-field-image-multiple img {
   width: 100%;
   height: 100%;
+}
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row .node-photo .field-name-field-image-multiple .field-item {
+  padding: 0 0.5px 0 0.5px;
 }
 
 .pane-menu-menu-language-custom .pane-content .menu-menu-language-custom {
@@ -1573,7 +1587,7 @@ body {
 }
 
 .pane-node-body .pane-content .field-type-text-with-summary {
-  max-width: 575px;
+  max-width: 500px;
   margin: auto;
   border: 2px solid #666;
   padding: 20px;
