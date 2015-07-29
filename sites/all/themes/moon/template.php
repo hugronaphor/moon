@@ -27,5 +27,6 @@ function moon_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
   $form['message']['#attributes']['placeholder'] = t("YOUR MESSAGE");
   $form['message']['#title_display'] = 'invisible';
 
-  unset($form['copy']);
+  $form['copy']['#access'] = FALSE;
+  // unset($form['copy']);
 }
