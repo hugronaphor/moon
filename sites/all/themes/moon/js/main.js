@@ -5,20 +5,15 @@
     /**
      * A simple Drupal behavior example.
      */
-    Drupal.behaviors.cirlceThemeExample = {
+    Drupal.behaviors.photoHover = {
         attach: function (context) {
-            // Your code goes here.
-            //hover for photos//
-            $ = jQuery;
-            $(document).ready(function () {
-                $('.view-display-id-photo_main_all article').hover(
-                    function () {
-                        $(".changeme2", this).fadeIn()
-                    },
-                    function () {
-                        $(".changeme2", this).fadeOut()
-                    });
-            });
+            $('.view-display-id-photo_main_all article').hover(
+                function () {
+                    $(".changeme2", this).fadeIn(100);
+                },
+                function () {
+                    $(".changeme2", this).stop().fadeOut(100);
+                });
 
         }
     };
