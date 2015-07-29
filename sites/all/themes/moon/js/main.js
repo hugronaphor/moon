@@ -7,13 +7,18 @@
      */
     Drupal.behaviors.cirlceThemeExample = {
         attach: function (context) {
-            // Your code goes here.
             //hover for photos//
             $ = jQuery;
             $(document).ready(function () {
                 $('.view-display-id-photo_main_all article').hover(
                     function () {
-                        $(".changeme2", this).fadeIn()
+                        if (!$(this).hasClass('animating')) {
+                            var hovered = this;
+                            $(this).addClass('animating');
+                            $(".changeme2", this).fadeIn('slow', function() {
+                                $(hovered).removeClass('animating');
+                            });
+                        }
                     },
                     function () {
                         $(".changeme2", this).fadeOut()
