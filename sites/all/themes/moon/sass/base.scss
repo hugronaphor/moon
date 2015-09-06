@@ -1,6 +1,3 @@
-$color: #daa675;
-$font: "MYRIADPRO-REGULAR" Regular;
-
 /**
  * @file
  * Styles are organized using the SMACSS technique. @see http://smacss.com/book/
@@ -8,22 +5,23 @@ $font: "MYRIADPRO-REGULAR" Regular;
  * When you turn on CSS aggregation at admin/config/development/performance, all
  * of these @include files will be combined into a single file.
  */
-
 /* Import Sass mixins, variables, Compass modules, etc. */
 @import "init";
-
 /* HTML element (SMACSS base) rules */
 @import "normalize";
-
 /* Component (SMACSS module) rules */
 @import "components/misc";
-
 // Optionally, add your own components here.
 @import "print";
 
 /* SMACSS theme rules */
 /* @import "theme-A"; */
 /* @import "theme-B"; desch*/
+
+// Variables.
+$color: #daa675;
+$font: "MYRIADPRO-REGULAR" Regular;
+$fontRalewayExtraLight: "Raleway-ExtraLight";
 
 .hidden {
   display: none;
@@ -47,24 +45,40 @@ body {
   font-size: 12.5px;
 }
 
-.pane-content {
-  max-width: 960px;
-  margin: auto;
-  padding: 0 10px;
+// Start* admin styles
+#admin-menu {
+  letter-spacing: 0;
 }
 
-@media screen and (min-width: 815px) {
-  .page-taxonomy {
-    .pane-content {
-      width: 815px;
-      margin: auto;
+.pane-content > .tabs {
+  position: absolute;
+  top: 20px;
+  left: 5px;
+  > ul.tabs li {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #333;
+    padding: 1px 7px;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
 
+// End* admin styles
+
+.panel-display {
+  max-width: 813px;
+  margin: auto;
+  padding: 0 10px;
+}
+
 @media only screen and (max-device-width: 814px) {
   .page-taxonomy {
-    .pane-content {
+    .panel-display {
       max-width: 433px;
       margin: auto;
     }
@@ -322,12 +336,14 @@ body {
 }
 
 //photo
-.view-display-id-photo_type_links, pane-vocabulary-terms {
+.view-display-id-photo_type_links {
   .view-content {
     .item-list {
+      margin: 0 0 20px 0;
       ul {
         text-align: left;
         padding: 0;
+
       }
       .views-row {
         display: inline-block;
@@ -335,7 +351,7 @@ body {
           .field-content {
             a {
               display: inline-block;
-              margin: 0 10px 20px 0;
+              margin: 0 10px 0px 0;
               text-decoration: none;
               color: #000000;
               text-transform: uppercase;
@@ -350,14 +366,6 @@ body {
           }
         }
       }
-    }
-  }
-}
-
-.pane-photo {
-  .view-content {
-    .views-row {
-      display: inline-flex;
     }
   }
 }
@@ -393,20 +401,35 @@ body {
   }
 }
 
+
+// @todo: photo-list pages.
+.pane-photo {
+  .view-content {
+    .views-row {
+      display: inline-flex;
+      width: 393px;
+    }
+  }
+}
+
 .page-taxonomy {
   .pane-photo {
     .pane-content {
       .view-display-id-photo_main_all {
         .views-row {
+          display: inline-flex;
+          //width: 393px;
           .node-photo {
             .field-name-field-image-multiple {
               img {
                 width: 100%;
                 height: auto;
                 float: left;
+                margin: 0;
+                padding: 0;
               }
               .field-item {
-                padding: 0 0.2px 0 0;
+                // padding: 0 0.2px 0 0;
               }
             }
 
@@ -501,16 +524,15 @@ body {
   content: "";
 }
 
-.after-hover-content {
+.on-hover-content {
   width: 100%;
   height: 100%;
   position: absolute;
   margin: auto;
   color: white;
   font-size: 20px;
-  font-family: "Raleway-ExtraLight";
+  font-family: $fontRalewayExtraLight;
   background: rgba(218, 166, 117, 0.75);
-  text-transform: lowercase;
   z-index: 999;
   top: 0;
   overflow: hidden;
@@ -521,7 +543,7 @@ body {
   }
 
   .field-name-field-headline {
-    padding: 10px 0 0 30px;
+    padding: 4px 0 0 30px;
     display: -webkit-box;
   }
 
@@ -529,10 +551,52 @@ body {
 
 .node-type-photo {
   .pane-node-title {
-    text-align: left;
+    float: left;
     display: block;
     text-transform: uppercase;
     color: $color;
-    padding: 20px 0 10px 20px;
+    padding: 0px 0 0px 25px;
+    font-size: 17px;
   }
+  .pane-node-field-headline {
+    float: left;
+    font-size: 17px;
+    display: inline-flex;
+
+    &:before {
+      content: "/";
+      float: left;
+      display: inline-flex;
+      padding: 0 7px 0 7px;
+    }
+  }
+  .pane-node-field-image-multiple {
+    clear: both;
+    padding-top: 10px;
+    .field-item {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.scrollToTop {
+  width: 18px;
+  height: 18px;
+  background: whiteSmoke;
+  z-index: 90;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background: url("../images/go_to_top_btn.png") no-repeat 0px 0px;
+  span {
+    display: none;
+  }
+}
+
+.scrollToTop:hover {
+  background: url("../images/go_to_top_btn.png") no-repeat -19px 0px;
 }

@@ -1276,20 +1276,36 @@ body {
   font-size: 12.5px;
 }
 
-.pane-content {
-  max-width: 960px;
+#admin-menu {
+  letter-spacing: 0;
+}
+
+.pane-content > .tabs {
+  position: absolute;
+  top: 20px;
+  left: 5px;
+}
+.pane-content > .tabs > ul.tabs li {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #333;
+  padding: 1px 7px;
+}
+.pane-content > .tabs > ul.tabs li a {
+  text-decoration: none;
+}
+.pane-content > .tabs > ul.tabs li a:hover {
+  text-decoration: underline;
+}
+
+.panel-display {
+  max-width: 813px;
   margin: auto;
   padding: 0 10px;
 }
 
-@media screen and (min-width: 815px) {
-  .page-taxonomy .pane-content {
-    width: 815px;
-    margin: auto;
-  }
-}
 @media only screen and (max-device-width: 814px) {
-  .page-taxonomy .pane-content {
+  .page-taxonomy .panel-display {
     max-width: 433px;
     margin: auto;
   }
@@ -1508,30 +1524,29 @@ body {
   margin-top: 0;
 }
 
-.view-display-id-photo_type_links .view-content .item-list ul, pane-vocabulary-terms .view-content .item-list ul {
+.view-display-id-photo_type_links .view-content .item-list {
+  margin: 0 0 20px 0;
+}
+.view-display-id-photo_type_links .view-content .item-list ul {
   text-align: left;
   padding: 0;
 }
-.view-display-id-photo_type_links .view-content .item-list .views-row, pane-vocabulary-terms .view-content .item-list .views-row {
+.view-display-id-photo_type_links .view-content .item-list .views-row {
   display: inline-block;
 }
-.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a, pane-vocabulary-terms .view-content .item-list .views-row .views-field-name .field-content a {
+.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a {
   display: inline-block;
-  margin: 0 10px 20px 0;
+  margin: 0 10px 0px 0;
   text-decoration: none;
   color: #000000;
   text-transform: uppercase;
   font-size: 12.5px;
 }
-.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a:hover, pane-vocabulary-terms .view-content .item-list .views-row .views-field-name .field-content a:hover {
+.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a:hover {
   color: #daa675;
 }
-.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content .active, pane-vocabulary-terms .view-content .item-list .views-row .views-field-name .field-content .active {
+.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content .active {
   color: #daa675;
-}
-
-.pane-photo .view-content .views-row {
-  display: inline-flex;
 }
 
 .page-taxonomy .pane-content .social-buttons, .page-about .pane-content .social-buttons, .page-video .pane-content .social-buttons {
@@ -1558,13 +1573,20 @@ body {
   text-align: right;
 }
 
+.pane-photo .view-content .views-row {
+  display: inline-flex;
+  width: 393px;
+}
+
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row {
+  display: inline-flex;
+}
 .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row .node-photo .field-name-field-image-multiple img {
   width: 100%;
   height: auto;
   float: left;
-}
-.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row .node-photo .field-name-field-image-multiple .field-item {
-  padding: 0 0.2px 0 0;
+  margin: 0;
+  padding: 0;
 }
 
 .pane-menu-menu-language-custom .pane-content .menu-menu-language-custom {
@@ -1620,7 +1642,7 @@ body {
   content: "";
 }
 
-.after-hover-content {
+.on-hover-content {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -1629,25 +1651,63 @@ body {
   font-size: 20px;
   font-family: "Raleway-ExtraLight";
   background: rgba(218, 166, 117, 0.75);
-  text-transform: lowercase;
   z-index: 999;
   top: 0;
   overflow: hidden;
   text-align: left;
 }
-.after-hover-content span.teaser-title {
+.on-hover-content span.teaser-title {
   padding: 30px 0 0 30px;
   display: -webkit-box;
 }
-.after-hover-content .field-name-field-headline {
-  padding: 10px 0 0 30px;
+.on-hover-content .field-name-field-headline {
+  padding: 4px 0 0 30px;
   display: -webkit-box;
 }
 
 .node-type-photo .pane-node-title {
-  text-align: left;
+  float: left;
   display: block;
   text-transform: uppercase;
   color: #daa675;
-  padding: 20px 0 10px 20px;
+  padding: 0px 0 0px 25px;
+  font-size: 17px;
+}
+.node-type-photo .pane-node-field-headline {
+  float: left;
+  font-size: 17px;
+  display: inline-flex;
+}
+.node-type-photo .pane-node-field-headline:before {
+  content: "/";
+  float: left;
+  display: inline-flex;
+  padding: 0 7px 0 7px;
+}
+.node-type-photo .pane-node-field-image-multiple {
+  clear: both;
+  padding-top: 10px;
+}
+.node-type-photo .pane-node-field-image-multiple .field-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.scrollToTop {
+  width: 18px;
+  height: 18px;
+  background: whiteSmoke;
+  z-index: 90;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background: url("../images/go_to_top_btn.png") no-repeat 0px 0px;
+}
+.scrollToTop span {
+  display: none;
+}
+
+.scrollToTop:hover {
+  background: url("../images/go_to_top_btn.png") no-repeat -19px 0px;
 }
