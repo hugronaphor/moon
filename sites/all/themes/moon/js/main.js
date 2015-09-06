@@ -3,16 +3,17 @@
     'use strict';
 
     /**
-     * A simple Drupal behavior example.
+     * Photo hover behaviour.
      */
     Drupal.behaviors.photoHover = {
         attach: function (context) {
-            $('.view-display-id-photo_main_all article').hover(
+
+            $('.view-display-id-photo_main_all a.article').hover(
                 function () {
-                    $(".changeme2", this).fadeIn(100);
+                    $(this).find(".after-hover-content").fadeIn(100);
                 },
                 function () {
-                    $(".changeme2", this).stop().fadeOut(100);
+                    $(this).find(".after-hover-content").stop().fadeOut(100);
                 });
 
         }

@@ -1174,7 +1174,7 @@ tr.selected td {
 }
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1435658814');
+  background-image: url('../images/progress.gif?1435262219');
 }
 
 /**
@@ -1272,7 +1272,6 @@ tr.selected td {
 body {
   margin: auto;
   text-align: center;
-  font-family: "MYRIADPRO-REGULAR" Regular;
   letter-spacing: 2px;
   font-size: 12.5px;
 }
@@ -1509,14 +1508,14 @@ body {
   margin-top: 0;
 }
 
-.view-display-id-photo_type_links .view-content .item-list ul {
+.view-display-id-photo_type_links .view-content .item-list ul, pane-vocabulary-terms .view-content .item-list ul {
   text-align: left;
   padding: 0;
 }
-.view-display-id-photo_type_links .view-content .item-list .views-row {
+.view-display-id-photo_type_links .view-content .item-list .views-row, pane-vocabulary-terms .view-content .item-list .views-row {
   display: inline-block;
 }
-.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a {
+.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a, pane-vocabulary-terms .view-content .item-list .views-row .views-field-name .field-content a {
   display: inline-block;
   margin: 0 10px 20px 0;
   text-decoration: none;
@@ -1524,10 +1523,10 @@ body {
   text-transform: uppercase;
   font-size: 12.5px;
 }
-.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a:hover {
+.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a:hover, pane-vocabulary-terms .view-content .item-list .views-row .views-field-name .field-content a:hover {
   color: #daa675;
 }
-.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content .active {
+.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content .active, pane-vocabulary-terms .view-content .item-list .views-row .views-field-name .field-content .active {
   color: #daa675;
 }
 
@@ -1611,31 +1610,44 @@ body {
   padding: 20px 0 10px 20px;
 }
 
-.view-display-id-photo_main_all article {
+.view-display-id-photo_main_all a.article {
   position: relative;
   display: block;
+  cursor: pointer;
 }
 
 .clearfix:after {
   content: "";
 }
 
-.changeme2 {
+.after-hover-content {
   width: 100%;
   height: 100%;
   position: absolute;
   margin: auto;
   color: white;
-  font-size: 25px;
+  font-size: 20px;
   font-family: "Raleway-ExtraLight";
   background: rgba(218, 166, 117, 0.75);
   text-transform: lowercase;
   z-index: 999;
   top: 0;
   overflow: hidden;
+  text-align: left;
 }
-.changeme2 span {
+.after-hover-content span.teaser-title {
   padding: 30px 0 0 30px;
   display: -webkit-box;
+}
+.after-hover-content .field-name-field-headline {
+  padding: 10px 0 0 30px;
+  display: -webkit-box;
+}
+
+.node-type-photo .pane-node-title {
+  text-align: left;
+  display: block;
   text-transform: uppercase;
+  color: #daa675;
+  padding: 20px 0 10px 20px;
 }
