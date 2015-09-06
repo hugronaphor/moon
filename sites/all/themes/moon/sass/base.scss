@@ -27,6 +27,10 @@ $fontRalewayExtraLight: "Raleway-ExtraLight";
   display: none;
 }
 
+.clearfix:after {
+  content: "";
+}
+
 @font-face {
   font-family: "MYRIADPRO-REGULAR";
   src: url("../fonts/MYRIADPRO-REGULAR.OTF")
@@ -72,17 +76,25 @@ body {
 
 .panel-display {
   max-width: 813px;
-  margin: auto;
-  padding: 0 10px;
+  margin: auto;;
 }
 
-@media only screen and (max-device-width: 814px) {
-  .page-taxonomy {
-    .panel-display {
-      max-width: 433px;
-      margin: auto;
+@media only screen and (max-width: 825px) {
+  .panel-display {
+    padding: 0 10px;
+  }
+
+  .view-display-id-photo_type_links {
+    ul {
+      text-align: center !important;
     }
   }
+  //.page-taxonomy {
+  //  .panel-display {
+  //    max-width: 433px;
+  //    margin: auto;
+  //  }
+  //}
 }
 
 //home
@@ -103,27 +115,25 @@ body {
 .pane-content .menu-main-menu {
   text-align: center;
   float: none;
-  margin: 45px auto 30px;
+  margin: 30px auto 30px;
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
   li {
     list-style-type: none;
     display: inline-block;
-    margin-top: 3px;
-  }
-  a {
-    text-decoration: none;
-    color: #000000;
-    text-transform: uppercase;
-    font-family: $font;
-    &:hover {
-      color: #daa675;
+    margin-top: 2px;
+    margin-bottom: 1px;
+    a {
+      line-height: 13px;
+      text-decoration: none;
+      color: #000000;
+      text-transform: uppercase;
+      font-family: $font;
+      &:hover, .active {
+        color: #daa675;
+      }
     }
   }
-  .active {
-    color: $color;
-  }
-
 }
 
 @media screen and (max-device-width: 376px) {
@@ -142,7 +152,7 @@ body {
   }
 }
 
-@media screen and (min-device-width: 377px) and (max-device-width: 524px) {
+@media screen and (min-width: 377px) and (max-device-width: 524px) {
   #main-menu, .menu-main-menu {
     display: inline-block;
     max-width: 366px;
@@ -158,18 +168,19 @@ body {
   }
 }
 
-@media screen and (min-device-width: 525px) {
+@media screen and (min-width: 525px) {
   #main-menu, .menu-main-menu {
     display: inline-block;
     max-width: 425px;
-    line-height: 20px;
+    //line-height: 16px;
     padding: 0;
     li {
-      display: inline;
-      margin: 0 10px;
-    }
-    a {
-      font-size: 16px;
+      display: inline-block;
+      margin: 0 7px;
+      padding: 0;
+      a {
+        font-size: 14px;
+      }
     }
   }
 }
@@ -229,7 +240,7 @@ body {
   }
 }
 
-@media screen and (min-device-width: 416px) {
+@media screen and (min-width: 416px) {
   .pane-moon-core-moon-social {
     .pane-content {
       .social-buttons {
@@ -401,25 +412,39 @@ body {
   }
 }
 
-
-// @todo: photo-list pages.
-.pane-photo {
-  .view-content {
-    .views-row {
-      display: inline-flex;
-      width: 393px;
-    }
-  }
-}
-
 .page-taxonomy {
   .pane-photo {
     .pane-content {
-      .view-display-id-photo_main_all {
+      .view-display-id-photo_main_all, .view-display-id-photo_main {
+        .view-content {
+          display: flex;
+          flex-flow: row wrap;
+
+          /* Then we define how is distributed the remaining space */
+          justify-content: space-around;
+        }
         .views-row {
-          display: inline-flex;
-          //width: 393px;
-          .node-photo {
+          margin: 2px;
+          padding: 0;
+          max-width: 402px;
+
+          &.views-row-odd {
+            margin: 2px 2px 2px 0;
+            @media only screen and (max-width: 825px) {
+              margin: 2px 0;
+            }
+          }
+          &.views-row-even {
+            margin: 2px 2px 0 2px;
+            @media only screen and (max-width: 825px) {
+              margin: 2px 0;
+            }
+          }
+          a.article {
+
+            position: relative;
+            display: block;
+            cursor: pointer;
             .field-name-field-image-multiple {
               img {
                 width: 100%;
@@ -429,10 +454,9 @@ body {
                 padding: 0;
               }
               .field-item {
-                // padding: 0 0.2px 0 0;
+                padding: 0;
               }
             }
-
           }
         }
       }
@@ -441,7 +465,6 @@ body {
 }
 
 //about
-
 .pane-menu-menu-language-custom {
   .pane-content {
     .menu-menu-language-custom {
@@ -482,6 +505,7 @@ body {
   }
 }
 
+// @todo: see if it's used..
 .pane-node-body {
   .pane-content {
     .field-type-text-with-summary {
@@ -514,16 +538,6 @@ body {
   }
 }
 
-.view-display-id-photo_main_all a.article {
-  position: relative;
-  display: block;
-  cursor: pointer;
-}
-
-.clearfix:after {
-  content: "";
-}
-
 .on-hover-content {
   width: 100%;
   height: 100%;
@@ -549,6 +563,7 @@ body {
 
 }
 
+// photo node
 .node-type-photo {
   .pane-node-title {
     float: left;
@@ -588,15 +603,21 @@ body {
   background: whiteSmoke;
   z-index: 90;
   position: fixed;
-  bottom: 20px;
+  bottom: 30px;
   right: 20px;
   display: none;
   background: url("../images/go_to_top_btn.png") no-repeat 0px 0px;
   span {
     display: none;
   }
+  &:hover {
+    background: url("../images/go_to_top_btn.png") no-repeat -19px 0px;
+  }
 }
 
-.scrollToTop:hover {
-  background: url("../images/go_to_top_btn.png") no-repeat -19px 0px;
-}
+// test
+//.initial-content {
+//  width: 100px;
+//  height: 100px;
+//  border: 1px solid;
+//}
