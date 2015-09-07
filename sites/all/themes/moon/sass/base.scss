@@ -45,7 +45,7 @@ body {
   margin: auto;
   text-align: center;
   //font-family: $font;
-  letter-spacing: 2px;
+  letter-spacing: 0px;
   font-size: 12.5px;
 }
 
@@ -149,7 +149,7 @@ body {
     padding: 0;
     li {
       display: inline;
-      margin: 0px 3px;
+      margin: 0px 4px;
       line-height: 22px;
     }
     a {
@@ -262,9 +262,9 @@ body {
 .pane-content {
   h2.pane-title {
     font-weight: normal;
-    margin: 40px 0 5px 0;
+    margin: 0px 0 10px 0;
     text-transform: uppercase;
-    font-size: 12.5px;
+    font-size: 14px;
   }
 }
 
@@ -360,7 +360,7 @@ body {
       ul {
         text-align: left;
         padding: 0;
-
+        margin: 0;
       }
       .views-row {
         display: inline-block;
@@ -468,44 +468,50 @@ body {
 }
 
 //about
-.pane-menu-menu-language-custom {
-  .pane-content {
-    .menu-menu-language-custom {
-      text-align: right;
-      li {
-        display: inline-block;
-      }
-      a {
-        color: #000000;
-        text-decoration: none;
-        text-transform: lowercase;
-        margin: 0 0 0 13px;
-        font-size: 16px;
-        &:hover {
-          color: $color;
+.page-about {
+  .pane-menu-menu-language-custom {
+    position: absolute;
+    right: 0;
+    top: -10px;
+    .pane-content {
+      .menu-menu-language-custom {
+        text-align: right;
+        li {
+          display: inline-block;
         }
-      }
-      .active {
-        color: $color;
-      }
-    }
-
-  }
-}
-
-.pane-node-field-about-headline {
-  .pane-content {
-    .field-name-field-about-headline {
-      .field-items {
-        .field-item {
-          p {
-            text-transform: uppercase;
-            font-size: 16px;
+        a {
+          color: #000000;
+          text-decoration: none;
+          text-transform: lowercase;
+          margin: 0 0 0 10px;
+          font-size: 14px;
+          &:hover, &.active {
+            color: $color;
           }
         }
       }
     }
   }
+
+  .pane-node-field-about-headline {
+    .pane-content {
+      .field-name-field-about-headline {
+        .field-items {
+          .field-item {
+            p {
+              margin: 0;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .pane-node-body {
+    margin-top: 25px;
+  }
+  // about end
 }
 
 // @todo: see if it's used..

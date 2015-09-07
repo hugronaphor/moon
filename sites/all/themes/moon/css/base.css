@@ -1276,7 +1276,7 @@ tr.selected td {
 body {
   margin: auto;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 0px;
   font-size: 12.5px;
 }
 
@@ -1370,7 +1370,7 @@ body {
   }
   #main-menu li, .menu-main-menu li {
     display: inline;
-    margin: 0px 3px;
+    margin: 0px 4px;
     line-height: 22px;
   }
   #main-menu a, .menu-main-menu a {
@@ -1456,9 +1456,9 @@ body {
 }
 .pane-content h2.pane-title {
   font-weight: normal;
-  margin: 40px 0 5px 0;
+  margin: 0px 0 10px 0;
   text-transform: uppercase;
-  font-size: 12.5px;
+  font-size: 14px;
 }
 
 .contact-form {
@@ -1548,6 +1548,7 @@ body {
 .view-display-id-photo_type_links .view-content .item-list ul {
   text-align: left;
   padding: 0;
+  margin: 0;
 }
 .view-display-id-photo_type_links .view-content .item-list .views-row {
   display: inline-block;
@@ -1631,29 +1632,33 @@ body {
   padding: 0;
 }
 
-.pane-menu-menu-language-custom .pane-content .menu-menu-language-custom {
+.page-about .pane-menu-menu-language-custom {
+  position: absolute;
+  right: 0;
+  top: -10px;
+}
+.page-about .pane-menu-menu-language-custom .pane-content .menu-menu-language-custom {
   text-align: right;
 }
-.pane-menu-menu-language-custom .pane-content .menu-menu-language-custom li {
+.page-about .pane-menu-menu-language-custom .pane-content .menu-menu-language-custom li {
   display: inline-block;
 }
-.pane-menu-menu-language-custom .pane-content .menu-menu-language-custom a {
+.page-about .pane-menu-menu-language-custom .pane-content .menu-menu-language-custom a {
   color: #000000;
   text-decoration: none;
   text-transform: lowercase;
-  margin: 0 0 0 13px;
-  font-size: 16px;
+  margin: 0 0 0 10px;
+  font-size: 14px;
 }
-.pane-menu-menu-language-custom .pane-content .menu-menu-language-custom a:hover {
+.page-about .pane-menu-menu-language-custom .pane-content .menu-menu-language-custom a:hover, .page-about .pane-menu-menu-language-custom .pane-content .menu-menu-language-custom a.active {
   color: #daa675;
 }
-.pane-menu-menu-language-custom .pane-content .menu-menu-language-custom .active {
-  color: #daa675;
-}
-
-.pane-node-field-about-headline .pane-content .field-name-field-about-headline .field-items .field-item p {
-  text-transform: uppercase;
+.page-about .pane-node-field-about-headline .pane-content .field-name-field-about-headline .field-items .field-item p {
+  margin: 0;
   font-size: 16px;
+}
+.page-about .pane-node-body {
+  margin-top: 25px;
 }
 
 .pane-node-body .pane-content .field-type-text-with-summary {
