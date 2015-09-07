@@ -1284,6 +1284,11 @@ body {
   letter-spacing: 0;
 }
 
+.pane-pane-messages {
+  letter-spacing: 0;
+  text-align: left;
+}
+
 .pane-content > .tabs {
   position: absolute;
   top: 20px;
@@ -1303,7 +1308,7 @@ body {
 }
 
 .panel-display {
-  max-width: 813px;
+  max-width: 814px;
   margin: auto;
 }
 
@@ -1345,7 +1350,7 @@ body {
   text-transform: uppercase;
   font-family: "MYRIADPRO-REGULAR" Regular;
 }
-.pane-content .menu-main-menu li a:hover, .pane-content .menu-main-menu li a .active {
+.pane-content .menu-main-menu li a:hover, .pane-content .menu-main-menu li a.active {
   color: #daa675;
 }
 
@@ -1547,10 +1552,7 @@ body {
   text-transform: uppercase;
   font-size: 12.5px;
 }
-.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a:hover {
-  color: #daa675;
-}
-.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content .active {
+.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a:hover, .view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a.active {
   color: #daa675;
 }
 
@@ -1590,7 +1592,7 @@ body {
   max-width: 402px;
 }
 .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row.views-row-odd, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row.views-row-odd {
-  margin: 2px 2px 2px 0;
+  margin: 2px 2px 3px 0;
 }
 @media only screen and (max-width: 825px) {
   .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row.views-row-odd, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row.views-row-odd {
@@ -1598,7 +1600,7 @@ body {
   }
 }
 .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row.views-row-even, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row.views-row-even {
-  margin: 2px 2px 0 2px;
+  margin: 2px 2px 3px 2px;
 }
 @media only screen and (max-width: 825px) {
   .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row.views-row-even, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row.views-row-even {
@@ -1710,7 +1712,15 @@ body {
   clear: both;
   padding-top: 10px;
 }
-.node-type-photo .pane-node-field-image-multiple .field-item img {
+.node-type-photo .pane-node-field-image-multiple .field-items {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.node-type-photo .pane-node-field-image-multiple .field-items .field-item {
+  margin-bottom: 2px;
+}
+.node-type-photo .pane-node-field-image-multiple .field-items .field-item img {
   max-width: 100%;
   height: auto;
 }
