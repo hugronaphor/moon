@@ -106,9 +106,16 @@ body {
   }
 }
 
-//contact
 .pane-page-logo {
   margin-top: 60px;
+  #logo {
+    max-width: 120px;
+    display: block;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+  }
 }
 
 .pane-content .menu-main-menu {
