@@ -469,6 +469,11 @@ body {
 
 //about
 .page-about {
+
+  .panel-col {
+    position: relative;
+  }
+
   .pane-menu-menu-language-custom {
     position: absolute;
     right: 0;
