@@ -86,7 +86,8 @@ body {
 
 @media only screen and (max-width: 825px) {
   .panel-display {
-    padding: 0 10px;
+    // @todo: we may need it on some pages.
+    //padding: 0 10px;
   }
 
   .view-display-id-photo_type_links {
@@ -109,7 +110,7 @@ body {
 .pane-page-logo {
   margin-top: 60px;
   #logo {
-    max-width: 120px;
+    max-width: 130px;
     display: block;
     margin: 0 auto;
     img {
@@ -121,7 +122,7 @@ body {
 .pane-content .menu-main-menu {
   text-align: center;
   float: none;
-  margin: 30px auto 30px;
+  margin: 30px auto;
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
   li {
@@ -143,6 +144,7 @@ body {
   }
 }
 
+// @todo: Review main menu responsive styles.
 @media screen and (max-device-width: 376px) {
   #main-menu, .menu-main-menu {
     display: inline-block;
@@ -215,48 +217,63 @@ body {
 }
 
 .pane-moon-core-moon-social {
+  text-align: right;
   .pane-content {
     .social-buttons {
-      margin: 25px 0 0 0;
+      margin: 18px 0 0 0;
       ul {
         padding: 0;
-      }
-      li {
-        display: inline-block;
-      }
-      a {
-        color: $color;
-        text-decoration: none;
-        text-transform: uppercase;
-        margin: 13px;
-      }
-    }
-  }
-}
-
-@media screen and (max-device-width: 415px) {
-  .pane-moon-core-moon-social {
-    .pane-content {
-      .social-buttons {
-        a {
-          margin: 5px;
-          font-size: 14px;
+        margin: 0;
+        li {
+          display: inline-block;
+          a {
+            color: $color;
+            font-size: 11px;
+            text-decoration: none;
+            text-transform: uppercase;
+            margin: 0 7px;
+          }
+          &.last a {
+            margin: 0 0 0 7px;
+          }
         }
       }
     }
   }
 }
 
-@media screen and (min-width: 416px) {
+@media screen and (max-width: 500px) {
   .pane-moon-core-moon-social {
+    text-align: center;
     .pane-content {
       .social-buttons {
         a {
-          margin: 10px;
-          font-size: 19px;
+          //margin: 10px;
+          //font-size: 19px;
         }
       }
     }
+  }
+}
+
+.pane-moon-core-moon-footer-contact {
+  text-align: right;
+  margin-top: 14px;
+    #wrapp-footer_contact {
+      font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+  .pane-moon-core-moon-footer-contact {
+    text-align: center;
+  }
+}
+
+#copyrights {
+  margin: 26px 0 10px 0;
+  p {
+   margin: 0;
   }
 }
 
@@ -406,12 +423,6 @@ body {
           color: $color;
         }
       }
-    }
-  }
-
-  .pane-moon-core-moon-footer-contact {
-    text-align: right;
-    #wrapp-footer_contact {
     }
   }
 }

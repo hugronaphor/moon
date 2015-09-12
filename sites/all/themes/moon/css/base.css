@@ -1313,10 +1313,6 @@ body {
 }
 
 @media only screen and (max-width: 825px) {
-  .panel-display {
-    padding: 0 10px;
-  }
-
   .view-display-id-photo_type_links ul {
     text-align: center !important;
   }
@@ -1330,7 +1326,7 @@ body {
   margin-top: 60px;
 }
 .pane-page-logo #logo {
-  max-width: 120px;
+  max-width: 130px;
   display: block;
   margin: 0 auto;
 }
@@ -1341,7 +1337,7 @@ body {
 .pane-content .menu-main-menu {
   text-align: center;
   float: none;
-  margin: 30px auto 30px;
+  margin: 30px auto;
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
 }
@@ -1425,34 +1421,55 @@ body {
   line-height: 2;
 }
 
+.pane-moon-core-moon-social {
+  text-align: right;
+}
 .pane-moon-core-moon-social .pane-content .social-buttons {
-  margin: 25px 0 0 0;
+  margin: 18px 0 0 0;
 }
 .pane-moon-core-moon-social .pane-content .social-buttons ul {
   padding: 0;
+  margin: 0;
 }
-.pane-moon-core-moon-social .pane-content .social-buttons li {
+.pane-moon-core-moon-social .pane-content .social-buttons ul li {
   display: inline-block;
 }
-.pane-moon-core-moon-social .pane-content .social-buttons a {
+.pane-moon-core-moon-social .pane-content .social-buttons ul li a {
   color: #daa675;
+  font-size: 11px;
   text-decoration: none;
   text-transform: uppercase;
-  margin: 13px;
+  margin: 0 7px;
+}
+.pane-moon-core-moon-social .pane-content .social-buttons ul li.last a {
+  margin: 0 0 0 7px;
 }
 
-@media screen and (max-device-width: 415px) {
-  .pane-moon-core-moon-social .pane-content .social-buttons a {
-    margin: 5px;
-    font-size: 14px;
+@media screen and (max-width: 500px) {
+  .pane-moon-core-moon-social {
+    text-align: center;
   }
 }
-@media screen and (min-width: 416px) {
-  .pane-moon-core-moon-social .pane-content .social-buttons a {
-    margin: 10px;
-    font-size: 19px;
+.pane-moon-core-moon-footer-contact {
+  text-align: right;
+  margin-top: 14px;
+}
+.pane-moon-core-moon-footer-contact #wrapp-footer_contact {
+  font-size: 11px;
+}
+
+@media screen and (max-width: 500px) {
+  .pane-moon-core-moon-footer-contact {
+    text-align: center;
   }
 }
+#copyrights {
+  margin: 26px 0 10px 0;
+}
+#copyrights p {
+  margin: 0;
+}
+
 .pane-content h2.pane-title {
   font-weight: normal;
   margin: 0px 0 10px 0;
@@ -1583,9 +1600,6 @@ body {
 }
 .page-taxonomy .pane-content .social-buttons a:hover, .page-about .pane-content .social-buttons a:hover, .page-video .pane-content .social-buttons a:hover {
   color: #daa675;
-}
-.page-taxonomy .pane-moon-core-moon-footer-contact, .page-about .pane-moon-core-moon-footer-contact, .page-video .pane-moon-core-moon-footer-contact {
-  text-align: right;
 }
 
 .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .view-content, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .view-content {
