@@ -29,4 +29,6 @@ function moon_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
 
   $form['copy']['#access'] = FALSE;
   // unset($form['copy']);
+
+  $form['actions']['submit']['#value'] = t('Send');
 }

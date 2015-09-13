@@ -1277,7 +1277,7 @@ body {
   margin: auto;
   text-align: center;
   letter-spacing: 1px;
-  font-size: 12.5px;
+  font-size: 12px;
 }
 
 #admin-menu {
@@ -1334,18 +1334,42 @@ body {
   width: 100%;
 }
 
-.pane-content .menu-main-menu {
+.pane-system-main-menu .menu-main-menu {
   text-align: center;
   float: none;
   margin: 30px auto;
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
+  max-width: 320px;
+  padding: 0;
 }
-.pane-content .menu-main-menu li {
+.pane-system-main-menu .menu-main-menu li {
   list-style-type: none;
   display: inline-block;
+  margin: 0 10px;
 }
-.pane-content .menu-main-menu li a {
+@media screen and (max-width: 320px) {
+  .pane-system-main-menu .menu-main-menu li {
+    margin: 0 2px;
+  }
+}
+.pane-system-main-menu .menu-main-menu li.first {
+  margin: 0 10px 0 5px;
+}
+@media screen and (max-width: 320px) {
+  .pane-system-main-menu .menu-main-menu li.first {
+    margin: 0 2px;
+  }
+}
+.pane-system-main-menu .menu-main-menu li.last {
+  margin: 0 5px 0 10px;
+}
+@media screen and (max-width: 320px) {
+  .pane-system-main-menu .menu-main-menu li.last {
+    margin: 0 2px;
+  }
+}
+.pane-system-main-menu .menu-main-menu li a {
   font-size: 12px;
   line-height: 12px;
   text-decoration: none;
@@ -1353,72 +1377,57 @@ body {
   text-transform: uppercase;
   font-family: "MYRIADPRO-REGULAR" Regular;
 }
-.pane-content .menu-main-menu li a:hover, .pane-content .menu-main-menu li a.active {
+.pane-system-main-menu .menu-main-menu li a:hover, .pane-system-main-menu .menu-main-menu li a.active {
   color: #daa675;
 }
 
-@media screen and (max-device-width: 376px) {
-  #main-menu, .menu-main-menu {
-    display: inline-block;
-    max-width: 365px;
-    padding: 0;
-  }
-  #main-menu li, .menu-main-menu li {
-    display: inline;
-    margin: 0px 4px;
-    line-height: 22px;
-  }
-  #main-menu a, .menu-main-menu a {
-    font-size: 12px;
-  }
+.pane-content h2.pane-title {
+  font-weight: normal;
+  margin: 0px 0 10px 0;
+  text-transform: uppercase;
+  font-size: 14px;
 }
-@media screen and (min-width: 377px) and (max-device-width: 524px) {
-  #main-menu, .menu-main-menu {
-    display: inline-block;
-    max-width: 366px;
-    padding: 0;
-  }
-  #main-menu li, .menu-main-menu li {
-    display: inline;
-    margin: 0 5px;
-  }
-  #main-menu a, .menu-main-menu a {
-    font-size: 15px;
-  }
-}
-@media screen and (min-width: 525px) {
-  #main-menu, .menu-main-menu {
-    display: inline-block;
-    max-width: 425px;
-    padding: 0;
-  }
-  #main-menu li, .menu-main-menu li {
-    display: inline-block;
-    margin: 0 7px;
-    padding: 0;
-  }
-  #main-menu li a, .menu-main-menu li a {
-    font-size: 14px;
-  }
-}
-.pane-content .pane-moon-core-moon-contact-page-top h2 {
+
+.pane-content .pane-moon-core-moon-contact-page-top h2.pane-title {
   color: #daa675;
   font-weight: 500;
-  font-size: 12.5px;
+  font-size: 10.5px;
   text-transform: uppercase;
+  margin: 0;
 }
-.pane-content .pane-moon-core-moon-contact-page-top span {
+.pane-content .pane-moon-core-moon-contact-page-top .pane-content {
+  margin-top: 13px;
+}
+.pane-content .pane-moon-core-moon-contact-page-top .pane-content span {
   display: block;
-  line-height: 1.7;
   font-weight: 500;
-  font-size: 19px;
+  font-size: 14px;
   font-family: "MYRIADPRO-REGULAR" Regular;
+  margin: 0;
+  padding: 0;
 }
-.pane-content .pane-moon-core-moon-contact-page-top a {
+.pane-content .pane-moon-core-moon-contact-page-top .pane-content span.first {
+  margin-bottom: 12px;
+}
+.pane-content .pane-moon-core-moon-contact-page-top .pane-content a {
+  display: block;
   text-decoration: none;
   color: #000;
-  font-size: 19px;
-  line-height: 2;
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+.page-contact-us #contact-page-social {
+  text-align: center;
+  margin-top: 22px;
+}
+.page-contact-us #contact-page-social li a {
+  font-size: 14px;
+}
+.page-contact-us .pane-contact h2.pane-title {
+  font-size: 10.5px;
+  margin: 45px 0 0 0;
+  font-weight: bold;
 }
 
 .pane-moon-core-moon-social {
@@ -1440,6 +1449,9 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   margin: 0 7px;
+}
+.pane-moon-core-moon-social .pane-content .social-buttons ul li a:hover {
+  color: #daa675;
 }
 .pane-moon-core-moon-social .pane-content .social-buttons ul li.last a {
   margin: 0 0 0 7px;
@@ -1470,88 +1482,60 @@ body {
   margin: 0;
 }
 
-.pane-content h2.pane-title {
-  font-weight: normal;
-  margin: 0px 0 10px 0;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-
 .contact-form {
   margin-bottom: 40px;
 }
 .contact-form .form-type-textfield input {
-  width: 87%;
-  max-width: 355px;
+  max-width: 280px;
   display: inline-block;
   background: #fff;
   border: 1px solid #999;
-  padding: 10px 12px;
+  padding: 5px 12px 3px 12px;
   outline: none;
-  margin: 13px auto;
-  font-size: 12.5px;
+  margin: 12px auto;
+  font-size: 10px;
   font-family: "MYRIADPRO-REGULAR" Regular;
   box-shadow: 1px 1px 1px #ccc;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 .contact-form .form-type-textfield label {
-  margin-top: 25px;
-  margin-left: 15px;
-  text-align: left;
-  clear: both;
-  display: inline-block;
-  vertical-align: middle;
-  position: absolute;
-  color: #999;
-  text-transform: uppercase;
-  font-size: 12.5px;
+  display: none;
 }
 .contact-form .form-type-textarea {
   display: inline-block;
   position: relative;
 }
 .contact-form .form-type-textarea textarea {
-  width: 95%;
-  max-width: 400px;
+  width: 100%;
+  max-width: 306px;
   display: inline-block;
   background: #fff;
   border: 1px solid #999;
   padding: 10px 12px;
   outline: none;
-  margin: 13px auto;
-  font-size: 12.5px;
+  margin: 12px auto;
+  font-size: 10px;
   font-family: "MYRIADPRO-REGULAR" Regular;
   box-shadow: 1px 1px 1px #ccc;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 .contact-form .form-type-textarea label {
-  margin-top: 25px;
-  text-align: left;
-  clear: both;
-  display: inline-block;
-  vertical-align: middle;
-  position: absolute;
-  color: #999;
-  text-transform: uppercase;
-  font-size: 12.5px;
-  margin-left: -48%;
+  display: none;
 }
 .contact-form .form-type-textarea .grippie {
   background: none;
   border: none;
 }
-.contact-form .form-actions {
-  height: 60px;
-}
 .contact-form .form-actions .form-submit {
   color: #daa675;
   background-color: #fff;
   border: 1px solid #daa675;
-  line-height: 2.5;
-  padding: 5px 15px;
+  line-height: 2;
+  padding: 1px 15px;
   text-transform: uppercase;
   margin-top: 1px;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  font-size: 10px;
 }
 .contact-form .form-actions .form-submit:hover {
   border: 2px solid #daa675;
@@ -1575,30 +1559,9 @@ body {
   text-decoration: none;
   color: #000000;
   text-transform: uppercase;
-  font-size: 12.5px;
+  font-size: 10px;
 }
 .view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a:hover, .view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a.active {
-  color: #daa675;
-}
-
-.page-taxonomy .pane-content .social-buttons, .page-about .pane-content .social-buttons, .page-video .pane-content .social-buttons {
-  text-align: right;
-}
-.page-taxonomy .pane-content .social-buttons .footer-social, .page-about .pane-content .social-buttons .footer-social, .page-video .pane-content .social-buttons .footer-social {
-  margin-top: 45px;
-}
-.page-taxonomy .pane-content .social-buttons li, .page-about .pane-content .social-buttons li, .page-video .pane-content .social-buttons li {
-  display: inline-block;
-  text-align: right;
-}
-.page-taxonomy .pane-content .social-buttons a, .page-about .pane-content .social-buttons a, .page-video .pane-content .social-buttons a {
-  color: #000000;
-  text-decoration: none;
-  text-transform: uppercase;
-  margin: 0 0 0 13px;
-  font-size: 12.5px;
-}
-.page-taxonomy .pane-content .social-buttons a:hover, .page-about .pane-content .social-buttons a:hover, .page-video .pane-content .social-buttons a:hover {
   color: #daa675;
 }
 
@@ -1651,7 +1614,7 @@ body {
 .page-about .pane-menu-menu-language-custom {
   position: absolute;
   right: 0;
-  top: -10px;
+  top: -13px;
 }
 .page-about .pane-menu-menu-language-custom .pane-content .menu-menu-language-custom {
   text-align: right;
@@ -1664,24 +1627,38 @@ body {
   text-decoration: none;
   text-transform: lowercase;
   margin: 0 0 0 10px;
-  font-size: 14px;
+  font-size: 11px;
 }
 .page-about .pane-menu-menu-language-custom .pane-content .menu-menu-language-custom a:hover, .page-about .pane-menu-menu-language-custom .pane-content .menu-menu-language-custom a.active {
   color: #daa675;
 }
+@media only screen and (max-width: 700px) {
+  .page-about .pane-menu-menu-language-custom {
+    position: relative;
+    top: 0;
+  }
+  .page-about .pane-menu-menu-language-custom .pane-content .menu-menu-language-custom {
+    padding: 0;
+    text-align: center;
+  }
+}
 .page-about .pane-node-field-about-headline .pane-content .field-name-field-about-headline .field-items .field-item p {
   margin: 0;
-  font-size: 16px;
+  font-size: 12px;
 }
 .page-about .pane-node-body {
   margin-top: 25px;
 }
-
-.pane-node-body .pane-content .field-type-text-with-summary {
-  max-width: 500px;
+.page-about .pane-node-body .pane-content .field-type-text-with-summary {
+  max-width: 520px;
   margin: auto;
   border: 2px solid #666;
-  padding: 20px;
+  padding: 15px;
+  font-size: 14px;
+}
+.page-about .pane-node-body .pane-content .field-type-text-with-summary p {
+  margin: 0;
+  line-height: 20px;
 }
 
 .page-video .view-id-video .views-row .views-field-field-video {
@@ -1701,7 +1678,7 @@ body {
   position: absolute;
   margin: auto;
   color: white;
-  font-size: 20px;
+  font-size: 19px;
   font-family: "Raleway-ExtraLight";
   background: rgba(218, 166, 117, 0.75);
   z-index: 999;
@@ -1724,11 +1701,11 @@ body {
   text-transform: uppercase;
   color: #daa675;
   padding: 0px 0 0px 25px;
-  font-size: 17px;
+  font-size: 12px;
 }
 .node-type-photo .pane-node-field-headline {
   float: left;
-  font-size: 17px;
+  font-size: 12px;
   display: inline-flex;
 }
 .node-type-photo .pane-node-field-headline:before {

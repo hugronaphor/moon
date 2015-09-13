@@ -46,7 +46,7 @@ body {
   text-align: center;
   //font-family: $font;
   letter-spacing: 1px;
-  font-size: 12.5px;
+  font-size: 12px;
 }
 
 // Start* admin styles
@@ -119,100 +119,105 @@ body {
   }
 }
 
-.pane-content .menu-main-menu {
-  text-align: center;
-  float: none;
-  margin: 30px auto;
-  border-bottom: 1px solid #000;
-  border-top: 1px solid #000;
-  li {
-    list-style-type: none;
-    display: inline-block;
-    //margin-top: 2px;
-    //margin-bottom: 1px;
-    a {
-      font-size: 12px;
-      line-height: 12px;
-      text-decoration: none;
-      color: #000000;
-      text-transform: uppercase;
-      font-family: $font;
-      &:hover, &.active {
-        color: #daa675;
+.pane-system-main-menu {
+  .menu-main-menu {
+    text-align: center;
+    float: none;
+    margin: 30px auto;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    max-width: 320px;
+    padding: 0;
+    li {
+      list-style-type: none;
+      display: inline-block;
+      margin: 0 10px;
+      @media screen and (max-width: 320px) {
+        margin: 0 2px;
+      }
+      &.first {
+        margin: 0 10px 0 5px;
+        @media screen and (max-width: 320px) {
+          margin: 0 2px;
+        }
+      }
+      &.last {
+        margin: 0 5px 0 10px;
+        @media screen and (max-width: 320px) {
+          margin: 0 2px;
+        }
+      }
+      a {
+        font-size: 12px;
+        line-height: 12px;
+        text-decoration: none;
+        color: #000000;
+        text-transform: uppercase;
+        font-family: $font;
+        &:hover, &.active {
+          color: #daa675;
+        }
       }
     }
   }
 }
 
-// @todo: Review main menu responsive styles.
-@media screen and (max-device-width: 376px) {
-  #main-menu, .menu-main-menu {
-    display: inline-block;
-    max-width: 365px;
-    padding: 0;
-    li {
-      display: inline;
-      margin: 0px 4px;
-      line-height: 22px;
-    }
-    a {
-      font-size: 12px;
-    }
+.pane-content {
+  h2.pane-title {
+    font-weight: normal;
+    margin: 0px 0 10px 0;
+    text-transform: uppercase;
+    font-size: 14px;
   }
 }
 
-@media screen and (min-width: 377px) and (max-device-width: 524px) {
-  #main-menu, .menu-main-menu {
-    display: inline-block;
-    max-width: 366px;
-    padding: 0;
-    li {
-      display: inline;
-      margin: 0 5px;
-    }
-    a {
-      font-size: 15px;
-    }
-
+.pane-content .pane-moon-core-moon-contact-page-top {
+  h2.pane-title {
+    color: $color;
+    font-weight: 500;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    margin: 0;
   }
-}
-
-@media screen and (min-width: 525px) {
-  #main-menu, .menu-main-menu {
-    display: inline-block;
-    max-width: 425px;
-    //line-height: 16px;
-    padding: 0;
-    li {
-      display: inline-block;
-      margin: 0 7px;
+  .pane-content {
+    margin-top: 13px;
+    span {
+      display: block;
+      font-weight: 500;
+      font-size: 14px;
+      font-family: $font;
+      margin: 0;
       padding: 0;
+      &.first {
+        margin-bottom: 12px;
+      }
+    }
+    a {
+      display: block;
+      text-decoration: none;
+      color: #000;
+      font-size: 14px;
+      margin-top: 18px;
+    }
+  }
+}
+
+.page-contact-us {
+  #contact-page-social {
+    text-align: center;
+    margin-top: 22px;
+    li {
       a {
         font-size: 14px;
       }
     }
   }
-}
-
-.pane-content .pane-moon-core-moon-contact-page-top {
-  h2 {
-    color: $color;
-    font-weight: 500;
-    font-size: 12.5px;
-    text-transform: uppercase;
-  }
-  span {
-    display: block;
-    line-height: 1.7;
-    font-weight: 500;
-    font-size: 19px;
-    font-family: $font;
-  }
-  a {
-    text-decoration: none;
-    color: #000;
-    font-size: 19px;
-    line-height: 2;
+  .pane-contact {
+    h2.pane-title {
+      font-size: 10.5px;
+      margin: 45px 0 0 0;
+      font-weight: bold;
+    }
   }
 }
 
@@ -232,6 +237,9 @@ body {
             text-decoration: none;
             text-transform: uppercase;
             margin: 0 7px;
+            &:hover {
+              color: $color;
+            }
           }
           &.last a {
             margin: 0 0 0 7px;
@@ -248,8 +256,7 @@ body {
     .pane-content {
       .social-buttons {
         a {
-          //margin: 10px;
-          //font-size: 19px;
+
         }
       }
     }
@@ -259,9 +266,9 @@ body {
 .pane-moon-core-moon-footer-contact {
   text-align: right;
   margin-top: 14px;
-    #wrapp-footer_contact {
-      font-size: 11px;
-    }
+  #wrapp-footer_contact {
+    font-size: 11px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -273,16 +280,7 @@ body {
 #copyrights {
   margin: 26px 0 10px 0;
   p {
-   margin: 0;
-  }
-}
-
-.pane-content {
-  h2.pane-title {
-    font-weight: normal;
-    margin: 0px 0 10px 0;
-    text-transform: uppercase;
-    font-size: 14px;
+    margin: 0;
   }
 }
 
@@ -290,60 +288,62 @@ body {
   margin-bottom: 40px;
   .form-type-textfield {
     input {
-      width: 87%;
-      max-width: 355px;
+      //width: 87%;
+      max-width: 280px;
       display: inline-block;
       background: #fff;
       border: 1px solid #999;
-      padding: 10px 12px;
+      padding: 5px 12px 3px 12px;
       outline: none;
-      margin: 13px auto;
-      font-size: 12.5px;
+      margin: 12px auto;
+      font-size: 10px;
       font-family: $font;
       box-shadow: 1px 1px 1px #ccc;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     }
     label {
-      margin-top: 25px;
-      margin-left: 15px;
-      text-align: left;
-      clear: both;
-      display: inline-block;
-      vertical-align: middle;
-      position: absolute;
-      color: #999;
-      text-transform: uppercase;
-      font-size: 12.5px;
+      display: none;
+      //margin-top: 25px;
+      //margin-left: 15px;
+      //text-align: left;
+      //clear: both;
+      //display: inline-block;
+      //vertical-align: middle;
+      //position: absolute;
+      //color: #999;
+      //text-transform: uppercase;
+      //font-size: 10px;
     }
   }
   .form-type-textarea {
     display: inline-block;
     position: relative;
     textarea {
-      width: 95%;
-      max-width: 400px;
+      width: 100%;
+      max-width: 306px;
       display: inline-block;
       background: #fff;
       border: 1px solid #999;
       padding: 10px 12px;
       outline: none;
-      margin: 13px auto;
-      font-size: 12.5px;
+      margin: 12px auto;
+      font-size: 10px;
       font-family: $font;
       box-shadow: 1px 1px 1px #ccc;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     }
     label {
-      margin-top: 25px;
-      text-align: left;
-      clear: both;
-      display: inline-block;
-      vertical-align: middle;
-      position: absolute;
-      color: #999;
-      text-transform: uppercase;
-      font-size: 12.5px;
-      margin-left: -48%;
+      display: none;
+      //margin-top: 25px;
+      //text-align: left;
+      //clear: both;
+      //display: inline-block;
+      //vertical-align: middle;
+      //position: absolute;
+      //color: #999;
+      //text-transform: uppercase;
+      //font-size: 10px;
+      //margin-left: -48%;
     }
     .grippie {
       background: none;
@@ -351,16 +351,17 @@ body {
     }
   }
   .form-actions {
-    height: 60px;
+    //height: 60px;
     .form-submit {
       color: $color;
       background-color: #fff;
-      border: 1px solid $color;
-      line-height: 2.5;
-      padding: 5px 15px;
+      border: 1px solid #daa675;
+      line-height: 2;
+      padding: 1px 15px;
       text-transform: uppercase;
       margin-top: 1px;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
+      font-size: 10px;
       &:hover {
         border: 2px solid $color;
         //font-size: 16px;
@@ -390,7 +391,7 @@ body {
               text-decoration: none;
               color: #000000;
               text-transform: uppercase;
-              font-size: 12.5px;
+              font-size: 10px;
               &:hover, &.active {
                 color: $color;
               }
@@ -402,30 +403,30 @@ body {
   }
 }
 
-.page-taxonomy, .page-about, .page-video {
-  .pane-content {
-    .social-buttons {
-      text-align: right;
-      .footer-social {
-        margin-top: 45px;
-      }
-      li {
-        display: inline-block;
-        text-align: right;
-      }
-      a {
-        color: #000000;
-        text-decoration: none;
-        text-transform: uppercase;
-        margin: 0 0 0 13px;
-        font-size: 12.5px;
-        &:hover {
-          color: $color;
-        }
-      }
-    }
-  }
-}
+//.page-taxonomy, .page-about, .page-video {
+//  .pane-content {
+//    .social-buttons {
+//      text-align: right;
+//      .footer-social {
+//        margin-top: 45px;
+//      }
+//      li {
+//        display: inline-block;
+//        text-align: right;
+//      }
+//      a {
+//        color: #000000;
+//        text-decoration: none;
+//        text-transform: uppercase;
+//        margin: 0 0 0 13px;
+//        font-size: 12.5px;
+//        &:hover {
+//          color: $color;
+//        }
+//      }
+//    }
+//  }
+//}
 
 .page-taxonomy {
   .pane-photo {
@@ -489,7 +490,7 @@ body {
   .pane-menu-menu-language-custom {
     position: absolute;
     right: 0;
-    top: -10px;
+    top: -13px;
     .pane-content {
       .menu-menu-language-custom {
         text-align: right;
@@ -501,10 +502,23 @@ body {
           text-decoration: none;
           text-transform: lowercase;
           margin: 0 0 0 10px;
-          font-size: 14px;
+          font-size: 11px;
           &:hover, &.active {
             color: $color;
           }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .pane-menu-menu-language-custom {
+      position: relative;
+      top: 0;
+      .pane-content {
+        .menu-menu-language-custom {
+          padding: 0;
+          text-align: center;
         }
       }
     }
@@ -517,7 +531,7 @@ body {
           .field-item {
             p {
               margin: 0;
-              font-size: 16px;
+              font-size: 12px;
             }
           }
         }
@@ -527,21 +541,21 @@ body {
 
   .pane-node-body {
     margin-top: 25px;
-  }
-  // about end
-}
-
-// @todo: see if it's used..
-.pane-node-body {
-  .pane-content {
-    .field-type-text-with-summary {
-      max-width: 500px;
-      margin: auto;
-      border: 2px solid #666;
-      padding: 20px;
+    .pane-content {
+      .field-type-text-with-summary {
+        max-width: 520px;
+        margin: auto;
+        border: 2px solid #666;
+        padding: 15px;
+        font-size: 14px;
+        p {
+          margin: 0;
+          line-height: 20px;
+        }
+      }
     }
   }
-
+  // about end
 }
 
 //video
@@ -570,7 +584,7 @@ body {
   position: absolute;
   margin: auto;
   color: white;
-  font-size: 20px;
+  font-size: 19px;
   font-family: $fontRalewayExtraLight;
   background: rgba(218, 166, 117, 0.75);
   z-index: 999;
@@ -597,11 +611,11 @@ body {
     text-transform: uppercase;
     color: $color;
     padding: 0px 0 0px 25px;
-    font-size: 17px;
+    font-size: 12px;
   }
   .pane-node-field-headline {
     float: left;
-    font-size: 17px;
+    font-size: 12px;
     display: inline-flex;
 
     &:before {
