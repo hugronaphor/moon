@@ -1276,6 +1276,7 @@ tr.selected td {
 body {
   margin: auto;
   text-align: center;
+  font-family: "MYRIADPRO-REGULAR" Regular;
   letter-spacing: 1px;
   font-size: 12px;
 }
@@ -1313,7 +1314,7 @@ body {
 }
 
 @media only screen and (max-width: 825px) {
-  .view-display-id-photo_type_links ul {
+  .view-display-id-photo_type_links ul, .view-display-id-video_type_links ul {
     text-align: center !important;
   }
 }
@@ -1336,7 +1337,6 @@ body {
 
 .pane-system-main-menu .menu-main-menu {
   text-align: center;
-  float: none;
   margin: 30px auto;
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
@@ -1347,6 +1347,8 @@ body {
   list-style-type: none;
   display: inline-block;
   margin: 0 10px;
+  top: 1px;
+  position: relative;
 }
 @media screen and (max-width: 320px) {
   .pane-system-main-menu .menu-main-menu li {
@@ -1391,7 +1393,7 @@ body {
 .pane-content .pane-moon-core-moon-contact-page-top h2.pane-title {
   color: #daa675;
   font-weight: 500;
-  font-size: 10.5px;
+  font-size: 10px;
   text-transform: uppercase;
   margin: 0;
 }
@@ -1542,18 +1544,18 @@ body {
   margin-top: 0;
 }
 
-.view-display-id-photo_type_links .view-content .item-list {
+.view-display-id-photo_type_links .view-content .item-list, .view-display-id-video_type_links .view-content .item-list {
   margin: 0 0 20px 0;
 }
-.view-display-id-photo_type_links .view-content .item-list ul {
+.view-display-id-photo_type_links .view-content .item-list ul, .view-display-id-video_type_links .view-content .item-list ul {
   text-align: left;
   padding: 0;
   margin: 0;
 }
-.view-display-id-photo_type_links .view-content .item-list .views-row {
+.view-display-id-photo_type_links .view-content .item-list .views-row, .view-display-id-video_type_links .view-content .item-list .views-row {
   display: inline-block;
 }
-.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a {
+.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a, .view-display-id-video_type_links .view-content .item-list .views-row .views-field-name .field-content a {
   display: inline-block;
   margin: 0 10px 0px 0;
   text-decoration: none;
@@ -1561,7 +1563,7 @@ body {
   text-transform: uppercase;
   font-size: 10px;
 }
-.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a:hover, .view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a.active {
+.view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a:hover, .view-display-id-photo_type_links .view-content .item-list .views-row .views-field-name .field-content a.active, .view-display-id-video_type_links .view-content .item-list .views-row .views-field-name .field-content a:hover, .view-display-id-video_type_links .view-content .item-list .views-row .views-field-name .field-content a.active {
   color: #daa675;
 }
 
@@ -1661,15 +1663,28 @@ body {
   line-height: 20px;
 }
 
-.page-video .view-id-video .views-row .views-field-field-video {
+.pane-video .view-id-video .views-row .views-field-field-video {
   margin-bottom: 15px;
 }
-.page-video .view-id-video .views-row .views-field span.field-content {
+.pane-video .view-id-video .views-row .views-field span.field-content {
   text-align: left;
   display: block;
   text-transform: uppercase;
   color: #daa675;
   padding: 20px 0 10px 20px;
+}
+
+.pane-block .more-videos-content {
+  border-top: 1px solid #000;
+  padding: 7px 10px 0 10px;
+  max-width: 290px;
+  margin: 0 auto;
+  font-size: 10px;
+}
+.pane-block .more-videos-content a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #daa675;
 }
 
 .on-hover-content {

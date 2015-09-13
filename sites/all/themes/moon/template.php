@@ -32,3 +32,36 @@ function moon_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
 
   $form['actions']['submit']['#value'] = t('Send');
 }
+
+/**
+ * Push the data about current page into JavaScript.
+ *
+ * @group: ActiveItem
+ */
+function moon_preprocess_html(&$variables) {
+
+  $page = menu_get_item();
+
+  if (!empty($page['path'])) {
+    switch ($page['path']) {
+      // Taxonomy term pages.
+      case 'taxonomy/term/%':
+
+        if (isset($page['page_arguments'][0]->vocabulary_machine_name)) {
+
+          // Photo taxonomy term detected.
+          if ($page['page_arguments'][0]->vocabulary_machine_name == 'photo_type') {
+            _moon_add_menu_data_js('photo');
+            return;
+          }
+
+          // Video taxonomy term detected.
+          if ($page['page_arguments'][0]->vocabulary_machine_name == 'video_type') {
+            _moon_add_menu_data_js('video');
+            return;
+          }
+        }
+        break;
+    }
+  }
+}
