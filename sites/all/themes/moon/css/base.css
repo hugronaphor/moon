@@ -1703,11 +1703,11 @@ body {
 }
 .on-hover-content span.teaser-title {
   padding: 30px 0 0 30px;
-  display: -webkit-box;
+  display: block;
 }
 .on-hover-content .field-name-field-headline {
   padding: 4px 0 0 30px;
-  display: -webkit-box;
+  display: block;
 }
 
 .node-type-photo .pane-node-title {
