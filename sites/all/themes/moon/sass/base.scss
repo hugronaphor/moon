@@ -40,7 +40,10 @@ $fontRalewayExtraLight: "Raleway-ExtraLight";
   font-family: "Raleway-ExtraLight";
   src: url("../fonts/Raleway-ExtraLight.ttf")
 }
-
+html {
+  overflow-y: scroll;
+  overflow: -moz-scrollbars-vertical;
+}
 body {
   margin: 0;
   text-align: center;
