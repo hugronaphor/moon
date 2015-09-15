@@ -7,13 +7,13 @@
  * @see https://drupal.org/node/1728164
  */
 ?>
-<article class="node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<a href="<?php print $node_url; ?>" class="article node-<?php print $node->nid; ?> <?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <div class="changeme1">
+  <div class="initial-content">
     <?php print render($content['field_image_multiple']); ?>
   </div>
 
-  <div class="hidden changeme2">
+  <div class="hidden on-hover-content">
     <span class="teaser-title"><?php print $title; ?></span>
     <?php print render($content['field_headline']); ?>
   </div>
@@ -24,5 +24,4 @@
   hide($content['links']);
   //print render($content);
   ?>
-
-</article>
+</a>

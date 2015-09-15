@@ -27,5 +27,66 @@ function moon_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
   $form['message']['#attributes']['placeholder'] = t("YOUR MESSAGE");
   $form['message']['#title_display'] = 'invisible';
 
-  unset($form['copy']);
+  $form['copy']['#access'] = FALSE;
+  // unset($form['copy']);
+
+  $form['actions']['submit']['#value'] = t('Send');
+}
+
+/**
+ * Push the data about current page into JavaScript.
+ *
+ * @group: ActiveItem
+ */
+function moon_preprocess_html(&$variables) {
+
+  $page = menu_get_item();
+
+  if (!empty($page['path'])) {
+    switch ($page['path']) {
+      // Taxonomy term pages.
+      case 'taxonomy/term/%':
+
+        if (isset($page['page_arguments'][0]->vocabulary_machine_name)) {
+
+          // Photo taxonomy term detected.
+          if ($page['page_arguments'][0]->vocabulary_machine_name == 'photo_type') {
+            _moon_add_menu_data_js('photo');
+            return;
+          }
+
+          // Video taxonomy term detected.
+          if ($page['page_arguments'][0]->vocabulary_machine_name == 'video_type') {
+            _moon_add_menu_data_js('video');
+            return;
+          }
+        }
+        break;
+      // About pages(multilingual simulation).
+      case 'about':
+        _moon_add_menu_data_js('about');
+        break;
+    }
+  }
+}
+
+function moon_preprocess_media_vimeo_video(&$variables) {
+  // The function name may be changed.
+  // @see: http://www.drupalcontrib.org/api/drupal/contributions!file_entity!file_entity.file_api.inc/function/file_uri_to_object/7
+  if (!function_exists('file_uri_to_object')) {
+    return;
+  }
+
+  $file = file_uri_to_object($variables['uri']);
+  $ratio = field_get_items('file', $file, 'field_vimeo_ratio');
+
+  if (empty($ratio)) {
+    return;
+  }
+
+  $ratio = explode('x', $ratio[0]['safe_value']);
+
+  // Push personalized video ratio.
+  $variables['width'] = $ratio[0];
+  $variables['height'] = $ratio[1];
 }
