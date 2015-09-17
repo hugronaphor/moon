@@ -40,16 +40,24 @@ $fontRalewayExtraLight: "Raleway-ExtraLight";
   font-family: "Raleway-ExtraLight";
   src: url("../fonts/Raleway-ExtraLight.ttf")
 }
+
 html {
   overflow-y: scroll;
   overflow: -moz-scrollbars-vertical;
 }
+
 body {
   margin: 0;
   text-align: center;
   font-family: "MYRIADPRO-REGULAR";
   letter-spacing: 1px;
   font-size: 12px;
+}
+
+a {
+  &:hover {
+    color: #000;
+  }
 }
 
 // Start* admin styles
@@ -120,7 +128,7 @@ body {
 .pane-system-main-menu {
   .menu-main-menu {
     text-align: center;
-    margin: 30px auto;
+    margin: 30px auto 20px auto;
     border-bottom: 1px solid #000;
     border-top: 1px solid #000;
     max-width: 320px;
@@ -157,6 +165,14 @@ body {
           color: #daa675;
         }
       }
+    }
+  }
+}
+
+.page-homepage {
+  .pane-system-main-menu {
+    .menu-main-menu {
+      margin: 30px auto;
     }
   }
 }
@@ -224,7 +240,7 @@ body {
   text-align: right;
   .pane-content {
     .social-buttons {
-      margin: 18px 0 0 0;
+      margin: 13px 0 0 0;
       ul {
         padding: 0;
         margin: 0;
@@ -237,7 +253,7 @@ body {
             text-transform: uppercase;
             margin: 0 7px;
             &:hover {
-              color: $color;
+              color: #000;
             }
           }
           &.last a {
@@ -264,7 +280,7 @@ body {
 
 .pane-moon-core-moon-footer-contact {
   text-align: right;
-  margin-top: 14px;
+  margin-top: 11px;
   #wrapp-footer_contact {
     font-size: 11px;
   }
@@ -297,21 +313,11 @@ body {
       margin: 12px auto;
       font-size: 10px;
       font-family: $font;
-      box-shadow: 1px 1px 1px #ccc;
+      //box-shadow: 1px 1px 1px #ccc;
       letter-spacing: 1px;
     }
     label {
       display: none;
-      //margin-top: 25px;
-      //margin-left: 15px;
-      //text-align: left;
-      //clear: both;
-      //display: inline-block;
-      //vertical-align: middle;
-      //position: absolute;
-      //color: #999;
-      //text-transform: uppercase;
-      //font-size: 10px;
     }
   }
   .form-type-textarea {
@@ -328,21 +334,11 @@ body {
       margin: 12px auto;
       font-size: 10px;
       font-family: $font;
-      box-shadow: 1px 1px 1px #ccc;
+      //box-shadow: 1px 1px 1px #ccc;
       letter-spacing: 1px;
     }
     label {
       display: none;
-      //margin-top: 25px;
-      //text-align: left;
-      //clear: both;
-      //display: inline-block;
-      //vertical-align: middle;
-      //position: absolute;
-      //color: #999;
-      //text-transform: uppercase;
-      //font-size: 10px;
-      //margin-left: -48%;
     }
     .grippie {
       background: none;
@@ -350,27 +346,23 @@ body {
     }
   }
   .form-actions {
-    //height: 60px;
     .form-submit {
       color: $color;
       background-color: #fff;
       border: 1px solid #daa675;
-      line-height: 2;
-      padding: 1px 15px;
+      padding: 6px 15px 4px 15px;
       text-transform: uppercase;
       margin-top: 1px;
       letter-spacing: 1px;
       font-size: 10px;
       &:hover {
-        border: 2px solid $color;
-        //font-size: 16px;
-        margin-top: 0;
+        border-color: #999;
       }
     }
   }
 }
 
-//photo
+// Video/Photo categories.
 .view-display-id-photo_type_links, .view-display-id-video_type_links {
   .view-content {
     .item-list {
@@ -519,12 +511,12 @@ body {
       .field-type-text-with-summary {
         max-width: 520px;
         margin: auto;
-        border: 2px solid #666;
+        border: 1px solid #666;
         padding: 15px;
         font-size: 14px;
         p {
           margin: 0;
-          line-height: 20px;
+          line-height: 24px;
         }
       }
     }
@@ -537,16 +529,31 @@ body {
   .view-id-video {
     .views-row {
       .views-field-field-video {
-        margin-bottom: 15px;
+        margin-bottom: 20px;
       }
-      .views-field {
+      .views-field-title {
+        float: left;
         span.field-content {
           text-align: left;
           display: block;
-          text-transform: uppercase;
           color: $color;
-          padding: 20px 0 10px 20px;
+          padding: 0 0 10px 20px;
         }
+      }
+      .views-field-field-headline {
+        float: left;
+        font-size: 12px;
+        display: inline-flex;
+
+        &:before {
+          content: "/";
+          float: left;
+          display: inline-flex;
+          padding: 0 7px 0 7px;
+        }
+      }
+      .views-field-field-video {
+        clear: both;
       }
     }
   }
@@ -554,7 +561,7 @@ body {
 
 .pane-block .more-videos-content {
   border-top: 1px solid #000;
-  padding: 7px 10px 0 10px;
+  padding: 4px 10px 0 10px;
   max-width: 290px;
   margin: 0 auto;
   font-size: 10px;
@@ -563,7 +570,7 @@ body {
     text-decoration: none;
     color: $color;
     &:hover {
-
+      color: #000;
     }
   }
 }
@@ -627,7 +634,7 @@ body {
       .field-item {
         margin-bottom: 2px;
         img {
-          max-width: 100%;
+          width: 100%;
           height: auto;
         }
       }
@@ -635,20 +642,34 @@ body {
   }
 }
 
-.scrollToTop {
-  width: 18px;
-  height: 18px;
-  background: whiteSmoke;
-  z-index: 90;
-  position: fixed;
-  bottom: 30px;
-  right: 20px;
-  display: none;
-  background: url("../images/go_to_top_btn.png") no-repeat 0px 0px;
-  span {
-    display: none;
-  }
-  &:hover {
-    background: url("../images/go_to_top_btn.png") no-repeat -19px 0px;
+.inflow.scroll-to-top-wrapp {
+  z-index: 900;
+  width: 20px;
+  height: 0px;
+  float: right;
+  position: relative;
+  margin-right: 62px;
+  .positioner {
+    position: absolute;
+    //right: 0;
+    .fixed {
+      width: 18px;
+      .scrollToTop {
+        width: 18px;
+        height: 18px;
+        background: whiteSmoke;
+        z-index: 90;
+        position: fixed;
+        bottom: 30px;
+        display: none;
+        background: url("../images/go_to_top_btn.png") no-repeat 0px 0px;
+        span {
+          display: none;
+        }
+        &:hover {
+          background: url("../images/go_to_top_btn.png") no-repeat -19px 0px;
+        }
+      }
+    }
   }
 }

@@ -1174,7 +1174,7 @@ tr.selected td {
 }
 .progress .filled {
   background-color: #0072b9;
-  background-image: url('../images/progress.gif?1442313018');
+  background-image: url('../images/progress.gif?1435262219');
 }
 
 /**
@@ -1286,6 +1286,10 @@ body {
   font-size: 12px;
 }
 
+a:hover {
+  color: #000;
+}
+
 #admin-menu {
   letter-spacing: 0;
 }
@@ -1342,7 +1346,7 @@ body {
 
 .pane-system-main-menu .menu-main-menu {
   text-align: center;
-  margin: 30px auto;
+  margin: 30px auto 20px auto;
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
   max-width: 320px;
@@ -1386,6 +1390,10 @@ body {
 }
 .pane-system-main-menu .menu-main-menu li a:hover, .pane-system-main-menu .menu-main-menu li a.active {
   color: #daa675;
+}
+
+.page-homepage .pane-system-main-menu .menu-main-menu {
+  margin: 30px auto;
 }
 
 .pane-content h2.pane-title {
@@ -1441,7 +1449,7 @@ body {
   text-align: right;
 }
 .pane-moon-core-moon-social .pane-content .social-buttons {
-  margin: 18px 0 0 0;
+  margin: 13px 0 0 0;
 }
 .pane-moon-core-moon-social .pane-content .social-buttons ul {
   padding: 0;
@@ -1458,7 +1466,7 @@ body {
   margin: 0 7px;
 }
 .pane-moon-core-moon-social .pane-content .social-buttons ul li a:hover {
-  color: #daa675;
+  color: #000;
 }
 .pane-moon-core-moon-social .pane-content .social-buttons ul li.last a {
   margin: 0 0 0 7px;
@@ -1471,7 +1479,7 @@ body {
 }
 .pane-moon-core-moon-footer-contact {
   text-align: right;
-  margin-top: 14px;
+  margin-top: 11px;
 }
 .pane-moon-core-moon-footer-contact #wrapp-footer_contact {
   font-size: 11px;
@@ -1502,7 +1510,6 @@ body {
   margin: 12px auto;
   font-size: 10px;
   font-family: "MYRIADPRO-REGULAR";
-  box-shadow: 1px 1px 1px #ccc;
   letter-spacing: 1px;
 }
 .contact-form .form-type-textfield label {
@@ -1523,7 +1530,6 @@ body {
   margin: 12px auto;
   font-size: 10px;
   font-family: "MYRIADPRO-REGULAR";
-  box-shadow: 1px 1px 1px #ccc;
   letter-spacing: 1px;
 }
 .contact-form .form-type-textarea label {
@@ -1537,16 +1543,14 @@ body {
   color: #daa675;
   background-color: #fff;
   border: 1px solid #daa675;
-  line-height: 2;
-  padding: 1px 15px;
+  padding: 6px 15px 4px 15px;
   text-transform: uppercase;
   margin-top: 1px;
   letter-spacing: 1px;
   font-size: 10px;
 }
 .contact-form .form-actions .form-submit:hover {
-  border: 2px solid #daa675;
-  margin-top: 0;
+  border-color: #999;
 }
 
 .view-display-id-photo_type_links .view-content .item-list, .view-display-id-video_type_links .view-content .item-list {
@@ -1659,29 +1663,45 @@ body {
 .page-about .pane-node-body .pane-content .field-type-text-with-summary {
   max-width: 520px;
   margin: auto;
-  border: 2px solid #666;
+  border: 1px solid #666;
   padding: 15px;
   font-size: 14px;
 }
 .page-about .pane-node-body .pane-content .field-type-text-with-summary p {
   margin: 0;
-  line-height: 20px;
+  line-height: 24px;
 }
 
 .pane-video .view-id-video .views-row .views-field-field-video {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
-.pane-video .view-id-video .views-row .views-field span.field-content {
+.pane-video .view-id-video .views-row .views-field-title {
+  float: left;
+}
+.pane-video .view-id-video .views-row .views-field-title span.field-content {
   text-align: left;
   display: block;
-  text-transform: uppercase;
   color: #daa675;
-  padding: 20px 0 10px 20px;
+  padding: 0 0 10px 20px;
+}
+.pane-video .view-id-video .views-row .views-field-field-headline {
+  float: left;
+  font-size: 12px;
+  display: inline-flex;
+}
+.pane-video .view-id-video .views-row .views-field-field-headline:before {
+  content: "/";
+  float: left;
+  display: inline-flex;
+  padding: 0 7px 0 7px;
+}
+.pane-video .view-id-video .views-row .views-field-field-video {
+  clear: both;
 }
 
 .pane-block .more-videos-content {
   border-top: 1px solid #000;
-  padding: 7px 10px 0 10px;
+  padding: 4px 10px 0 10px;
   max-width: 290px;
   margin: 0 auto;
   font-size: 10px;
@@ -1690,6 +1710,9 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   color: #daa675;
+}
+.pane-block .more-videos-content a:hover {
+  color: #000;
 }
 
 .on-hover-content {
@@ -1747,24 +1770,37 @@ body {
   margin-bottom: 2px;
 }
 .node-type-photo .pane-node-field-image-multiple .field-items .field-item img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
-.scrollToTop {
+.inflow.scroll-to-top-wrapp {
+  z-index: 900;
+  width: 20px;
+  height: 0px;
+  float: right;
+  position: relative;
+  margin-right: 62px;
+}
+.inflow.scroll-to-top-wrapp .positioner {
+  position: absolute;
+}
+.inflow.scroll-to-top-wrapp .positioner .fixed {
+  width: 18px;
+}
+.inflow.scroll-to-top-wrapp .positioner .fixed .scrollToTop {
   width: 18px;
   height: 18px;
   background: whiteSmoke;
   z-index: 90;
   position: fixed;
   bottom: 30px;
-  right: 20px;
   display: none;
   background: url("../images/go_to_top_btn.png") no-repeat 0px 0px;
 }
-.scrollToTop span {
+.inflow.scroll-to-top-wrapp .positioner .fixed .scrollToTop span {
   display: none;
 }
-.scrollToTop:hover {
+.inflow.scroll-to-top-wrapp .positioner .fixed .scrollToTop:hover {
   background: url("../images/go_to_top_btn.png") no-repeat -19px 0px;
 }
