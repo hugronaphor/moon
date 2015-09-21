@@ -115,6 +115,9 @@ a {
 
 .pane-page-logo {
   margin-top: 61px;
+  @media screen and (max-width: 320px) {
+    margin-top: 25px;
+  }
   #logo {
     max-width: 130px;
     display: block;
@@ -133,6 +136,9 @@ a {
     border-top: 1px solid #000;
     max-width: 320px;
     padding: 0;
+    @media screen and (max-width: 320px) {
+      margin: 25px auto 14px auto;
+    }
     li {
       list-style-type: none;
       display: inline-block;
@@ -140,18 +146,18 @@ a {
       top: 1px;
       position: relative;
       @media screen and (max-width: 320px) {
-        margin: 0 2px;
+        margin: 0 2%;
       }
       &.first {
         margin: 0 10px 0 5px;
         @media screen and (max-width: 320px) {
-          margin: 0 2px;
+          margin: 0 2%;
         }
       }
       &.last {
         margin: 0 5px 0 10px;
         @media screen and (max-width: 320px) {
-          margin: 0 2px;
+          margin: 0 2%;
         }
       }
       a {
@@ -173,6 +179,9 @@ a {
   .pane-system-main-menu {
     .menu-main-menu {
       margin: 30px auto;
+      @media screen and (max-width: 320px) {
+        margin: 25px auto;
+      }
     }
   }
 }
@@ -241,6 +250,9 @@ a {
   .pane-content {
     .social-buttons {
       margin: 13px 0 0 0;
+      @media screen and (max-width: 320px) {
+        margin: 10px 0 0 0;
+      }
       ul {
         padding: 0;
         margin: 0;
@@ -294,6 +306,9 @@ a {
 
 #copyrights {
   margin: 26px 0 10px 0;
+  @media screen and (max-width: 320px) {
+    margin: 20px 0 10px 0;
+  }
   p {
     margin: 0;
   }
@@ -367,6 +382,9 @@ a {
   .view-content {
     .item-list {
       margin: 0 0 20px 0;
+      @media screen and (max-width: 320px) {
+        margin: 0 0 10px 0;
+      }
       ul {
         text-align: left;
         padding: 0;
@@ -507,6 +525,9 @@ a {
 
   .pane-node-body {
     margin-top: 25px;
+    @media screen and (max-width: 320px) {
+      margin-top: 15px;
+    }
     .pane-content {
       .field-type-text-with-summary {
         max-width: 520px;
@@ -516,7 +537,7 @@ a {
         font-size: 14px;
         p {
           margin: 0;
-          line-height: 24px;
+          line-height: 26px;
         }
       }
     }

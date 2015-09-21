@@ -1335,6 +1335,11 @@ a:hover {
 .pane-page-logo {
   margin-top: 61px;
 }
+@media screen and (max-width: 320px) {
+  .pane-page-logo {
+    margin-top: 25px;
+  }
+}
 .pane-page-logo #logo {
   max-width: 130px;
   display: block;
@@ -1352,6 +1357,11 @@ a:hover {
   max-width: 320px;
   padding: 0;
 }
+@media screen and (max-width: 320px) {
+  .pane-system-main-menu .menu-main-menu {
+    margin: 25px auto 14px auto;
+  }
+}
 .pane-system-main-menu .menu-main-menu li {
   list-style-type: none;
   display: inline-block;
@@ -1361,7 +1371,7 @@ a:hover {
 }
 @media screen and (max-width: 320px) {
   .pane-system-main-menu .menu-main-menu li {
-    margin: 0 2px;
+    margin: 0 2%;
   }
 }
 .pane-system-main-menu .menu-main-menu li.first {
@@ -1369,7 +1379,7 @@ a:hover {
 }
 @media screen and (max-width: 320px) {
   .pane-system-main-menu .menu-main-menu li.first {
-    margin: 0 2px;
+    margin: 0 2%;
   }
 }
 .pane-system-main-menu .menu-main-menu li.last {
@@ -1377,7 +1387,7 @@ a:hover {
 }
 @media screen and (max-width: 320px) {
   .pane-system-main-menu .menu-main-menu li.last {
-    margin: 0 2px;
+    margin: 0 2%;
   }
 }
 .pane-system-main-menu .menu-main-menu li a {
@@ -1394,6 +1404,11 @@ a:hover {
 
 .page-homepage .pane-system-main-menu .menu-main-menu {
   margin: 30px auto;
+}
+@media screen and (max-width: 320px) {
+  .page-homepage .pane-system-main-menu .menu-main-menu {
+    margin: 25px auto;
+  }
 }
 
 .pane-content h2.pane-title {
@@ -1451,6 +1466,11 @@ a:hover {
 .pane-moon-core-moon-social .pane-content .social-buttons {
   margin: 13px 0 0 0;
 }
+@media screen and (max-width: 320px) {
+  .pane-moon-core-moon-social .pane-content .social-buttons {
+    margin: 10px 0 0 0;
+  }
+}
 .pane-moon-core-moon-social .pane-content .social-buttons ul {
   padding: 0;
   margin: 0;
@@ -1492,6 +1512,11 @@ a:hover {
 }
 #copyrights {
   margin: 26px 0 10px 0;
+}
+@media screen and (max-width: 320px) {
+  #copyrights {
+    margin: 20px 0 10px 0;
+  }
 }
 #copyrights p {
   margin: 0;
@@ -1555,6 +1580,11 @@ a:hover {
 
 .view-display-id-photo_type_links .view-content .item-list, .view-display-id-video_type_links .view-content .item-list {
   margin: 0 0 20px 0;
+}
+@media screen and (max-width: 320px) {
+  .view-display-id-photo_type_links .view-content .item-list, .view-display-id-video_type_links .view-content .item-list {
+    margin: 0 0 10px 0;
+  }
 }
 .view-display-id-photo_type_links .view-content .item-list ul, .view-display-id-video_type_links .view-content .item-list ul {
   text-align: left;
@@ -1660,6 +1690,11 @@ a:hover {
 .page-about .pane-node-body {
   margin-top: 25px;
 }
+@media screen and (max-width: 320px) {
+  .page-about .pane-node-body {
+    margin-top: 15px;
+  }
+}
 .page-about .pane-node-body .pane-content .field-type-text-with-summary {
   max-width: 520px;
   margin: auto;
@@ -1669,7 +1704,7 @@ a:hover {
 }
 .page-about .pane-node-body .pane-content .field-type-text-with-summary p {
   margin: 0;
-  line-height: 24px;
+  line-height: 26px;
 }
 
 .pane-video .view-id-video .views-row .views-field-field-video {
