@@ -8,9 +8,6 @@ sites/*/private
 
 sites/default/settings.php.save
 
-
-
-
 sites/all/themes/xgaby/.sass-cache/*/base.scssc
 sites/all/themes/xgaby/.sass-cache/*/*
 
