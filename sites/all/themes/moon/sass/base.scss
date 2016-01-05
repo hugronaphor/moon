@@ -523,13 +523,13 @@ a {
     }
   }
 
-  .pane-node-body {
+  .pane-node-body, .pane-node-field-text {
     margin-top: 25px;
     @media screen and (max-width: 320px) {
       margin-top: 15px;
     }
-    .pane-content {
-      .field-type-text-with-summary {
+    .pane-content > div {
+
         max-width: 520px;
         margin: auto;
         border: 1px solid #666;
@@ -539,8 +539,11 @@ a {
           margin: 0;
           line-height: 26px;
         }
-      }
+
     }
+  }
+  .pane-node-body {
+    margin-top: 15px;
   }
   // about end
 }

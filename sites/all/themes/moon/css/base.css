@@ -1687,24 +1687,27 @@ a:hover {
   margin: 0;
   font-size: 12px;
 }
-.page-about .pane-node-body {
+.page-about .pane-node-body, .page-about .pane-node-field-text {
   margin-top: 25px;
 }
 @media screen and (max-width: 320px) {
-  .page-about .pane-node-body {
+  .page-about .pane-node-body, .page-about .pane-node-field-text {
     margin-top: 15px;
   }
 }
-.page-about .pane-node-body .pane-content .field-type-text-with-summary {
+.page-about .pane-node-body .pane-content > div, .page-about .pane-node-field-text .pane-content > div {
   max-width: 520px;
   margin: auto;
   border: 1px solid #666;
   padding: 15px;
   font-size: 14px;
 }
-.page-about .pane-node-body .pane-content .field-type-text-with-summary p {
+.page-about .pane-node-body .pane-content > div p, .page-about .pane-node-field-text .pane-content > div p {
   margin: 0;
   line-height: 26px;
+}
+.page-about .pane-node-body {
+  margin-top: 15px;
 }
 
 .pane-video .view-id-video .views-row .views-field-field-video {
