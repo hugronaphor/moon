@@ -415,7 +415,9 @@ a {
 .page-taxonomy {
   .pane-photo {
     .pane-content {
-      .view-display-id-photo_main_all, .view-display-id-photo_main {
+      .view-display-id-photo_main_all,
+      .view-display-id-photo_main,
+      .view-display-id-photo_main_per_author {
         .view-content {
           display: flex;
           flex-flow: row wrap;

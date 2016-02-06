@@ -1606,46 +1606,64 @@ a:hover {
   color: #daa675;
 }
 
-.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .view-content, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .view-content {
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .view-content,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .view-content,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_per_author .view-content {
   display: flex;
   flex-flow: row wrap;
   /* Then we define how is distributed the remaining space */
   justify-content: space-around;
 }
-.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row {
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_per_author .views-row {
   margin: 2px;
   padding: 0;
   max-width: 402px;
 }
-.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row.views-row-odd, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row.views-row-odd {
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row.views-row-odd,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row.views-row-odd,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_per_author .views-row.views-row-odd {
   margin: 2px 2px 3px 0;
 }
 @media only screen and (max-width: 825px) {
-  .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row.views-row-odd, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row.views-row-odd {
+  .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row.views-row-odd,
+  .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row.views-row-odd,
+  .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_per_author .views-row.views-row-odd {
     margin: 2px 0;
   }
 }
-.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row.views-row-even, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row.views-row-even {
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row.views-row-even,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row.views-row-even,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_per_author .views-row.views-row-even {
   margin: 2px 2px 3px 2px;
 }
 @media only screen and (max-width: 825px) {
-  .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row.views-row-even, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row.views-row-even {
+  .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row.views-row-even,
+  .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row.views-row-even,
+  .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_per_author .views-row.views-row-even {
     margin: 2px 0;
   }
 }
-.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row a.article, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row a.article {
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row a.article,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row a.article,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_per_author .views-row a.article {
   position: relative;
   display: block;
   cursor: pointer;
 }
-.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row a.article .field-name-field-image-multiple img, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row a.article .field-name-field-image-multiple img {
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row a.article .field-name-field-image-multiple img,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row a.article .field-name-field-image-multiple img,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_per_author .views-row a.article .field-name-field-image-multiple img {
   width: 100%;
   height: auto;
   float: left;
   margin: 0;
   padding: 0;
 }
-.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row a.article .field-name-field-image-multiple .field-item, .page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row a.article .field-name-field-image-multiple .field-item {
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_all .views-row a.article .field-name-field-image-multiple .field-item,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main .views-row a.article .field-name-field-image-multiple .field-item,
+.page-taxonomy .pane-photo .pane-content .view-display-id-photo_main_per_author .views-row a.article .field-name-field-image-multiple .field-item {
   padding: 0;
 }
 

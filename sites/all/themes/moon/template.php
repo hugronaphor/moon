@@ -66,6 +66,33 @@ function moon_preprocess_html(&$variables) {
       case 'about':
         _moon_add_menu_data_js('about');
         break;
+
+      // Panel Node page.
+      case 'node/%':
+
+        if (!empty($page['page_arguments'][0])) {
+          $node = $page['page_arguments'][0];
+
+          $main_author_tid = 12;
+          $author = 'main';
+          if (!empty($node->field_author[LANGUAGE_NONE][0]['tid']) && $node->field_author[LANGUAGE_NONE][0]['tid'] != $main_author_tid) {
+            $author = 'special';
+          }
+
+          drupal_add_js(array(
+            'pageAuthor' => array(
+              'which' => $author,
+              'authorName' => 'Stas', // @todo: get the author name.
+            )
+          ), array(
+            'type' => 'setting'
+          ));
+
+        }
+
+        break;
+
+
     }
   }
 }
