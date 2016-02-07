@@ -16,7 +16,7 @@
           if (authorName != '') {
             if (whichAuthor === 'special') {
               $('.menu-main-menu li').not('li:first').remove();
-              $('.menu-main-menu li:first-child a').text('PHOTO BY ' + authorName);
+              $('.menu-main-menu li:first-child ').addClass('special-author').prepend('PHOTO BY').find('a').attr('href', dSettings.pageAuthor.authorURL).text(authorName);
             }
           }
         }

@@ -5,6 +5,9 @@
  * Write your theme logic here.
  */
 
+define('MAIN_AUTHOR_TID', 12);
+
+
 /**
  * Implements hook_preprocess_node().
  */
@@ -14,6 +17,11 @@ function moon_preprocess_node(&$vars) {
   }
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Contact form.
+ */
 function moon_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
   $form['name']['#attributes']['placeholder'] = t("NAME");
   $form['name']['#title_display'] = 'invisible';
@@ -34,6 +42,15 @@ function moon_form_contact_site_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Protected page form.
+ */
+function moon_form_protected_pages_enter_password_alter(&$form, &$form_state, $form_id) {
+  $form['protected_page_enter_password']['password']['#attributes']['placeholder'] = t('Password');
+}
+
+/**
  * Push the data about current page into JavaScript.
  *
  * @group: ActiveItem
@@ -49,16 +66,36 @@ function moon_preprocess_html(&$variables) {
 
         if (isset($page['page_arguments'][0]->vocabulary_machine_name)) {
 
+          $term = $page['page_arguments'][0];
+
           // Photo taxonomy term detected.
-          if ($page['page_arguments'][0]->vocabulary_machine_name == 'photo_type') {
+          if ($term->vocabulary_machine_name == 'photo_type') {
             _moon_add_menu_data_js('photo');
             return;
           }
 
           // Video taxonomy term detected.
-          if ($page['page_arguments'][0]->vocabulary_machine_name == 'video_type') {
+          if ($term->vocabulary_machine_name == 'video_type') {
             _moon_add_menu_data_js('video');
             return;
+          }
+
+          // Photo taxonomy term detected.
+          if ($term->vocabulary_machine_name == 'author') {
+            $author = 'main';
+            if ($term->tid != MAIN_AUTHOR_TID) {
+              $author = 'special';
+
+              drupal_add_js(array(
+                'pageAuthor' => array(
+                  'which' => $author,
+                  'authorName' => $term->name,
+                  'authorURL' => url('taxonomy/term/' . $term->tid, ['absolute' => TRUE]),
+                )
+              ), array(
+                'type' => 'setting'
+              ));
+            }
           }
         }
         break;
@@ -73,26 +110,27 @@ function moon_preprocess_html(&$variables) {
         if (!empty($page['page_arguments'][0])) {
           $node = $page['page_arguments'][0];
 
-          $main_author_tid = 12;
-          $author = 'main';
-          if (!empty($node->field_author[LANGUAGE_NONE][0]['tid']) && $node->field_author[LANGUAGE_NONE][0]['tid'] != $main_author_tid) {
-            $author = 'special';
+          if ($node->type == 'photo') {
+            $author = 'main';
+            if (!empty($node->field_author[LANGUAGE_NONE][0]['tid']) && $node->field_author[LANGUAGE_NONE][0]['tid'] != MAIN_AUTHOR_TID) {
+              $author = 'special';
+              $tid = $node->field_author[LANGUAGE_NONE][0]['tid'];
+              $term = taxonomy_term_load($tid);
+
+              drupal_add_js(array(
+                'pageAuthor' => array(
+                  'which' => $author,
+                  'authorName' => $term->name,
+                  'authorURL' => url('taxonomy/term/' . $term->tid, ['absolute' => TRUE]),
+                )
+              ), array(
+                'type' => 'setting'
+              ));
+            }
           }
-
-          drupal_add_js(array(
-            'pageAuthor' => array(
-              'which' => $author,
-              'authorName' => 'Stas', // @todo: get the author name.
-            )
-          ), array(
-            'type' => 'setting'
-          ));
-
         }
 
         break;
-
-
     }
   }
 }

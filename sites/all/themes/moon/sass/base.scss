@@ -171,6 +171,14 @@ a {
           color: #daa675;
         }
       }
+
+      &.special-author {
+        color: #daa675;
+        a {
+          color: #000;
+          margin-left: 4px;
+        }
+      }
     }
   }
 }
@@ -532,15 +540,15 @@ a {
     }
     .pane-content > div {
 
-        max-width: 520px;
-        margin: auto;
-        border: 1px solid #666;
-        padding: 15px;
-        font-size: 14px;
-        p {
-          margin: 0;
-          line-height: 26px;
-        }
+      max-width: 520px;
+      margin: auto;
+      border: 1px solid #666;
+      padding: 15px;
+      font-size: 14px;
+      p {
+        margin: 0;
+        line-height: 26px;
+      }
 
     }
   }
@@ -696,6 +704,37 @@ a {
           background: url("../images/go_to_top_btn.png") no-repeat -19px 0px;
         }
       }
+    }
+  }
+}
+
+// Protected pages form.
+form.protected-pages-enter-password {
+  input {
+    //width: 87%;
+    max-width: 280px;
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #999;
+    padding: 5px 12px 3px 12px;
+    outline: none;
+    margin: 12px auto;
+    font-size: 10px;
+    font-family: $font;
+    //box-shadow: 1px 1px 1px #ccc;
+    letter-spacing: 1px;
+  }
+  .form-submit {
+    color: $color;
+    background-color: #fff;
+    border: 1px solid #daa675;
+    padding: 6px 15px 4px 15px;
+    text-transform: uppercase;
+    margin-top: 1px;
+    letter-spacing: 1px;
+    font-size: 10px;
+    &:hover {
+      border-color: #999;
     }
   }
 }

@@ -1401,6 +1401,13 @@ a:hover {
 .pane-system-main-menu .menu-main-menu li a:hover, .pane-system-main-menu .menu-main-menu li a.active {
   color: #daa675;
 }
+.pane-system-main-menu .menu-main-menu li.special-author {
+  color: #daa675;
+}
+.pane-system-main-menu .menu-main-menu li.special-author a {
+  color: #000;
+  margin-left: 4px;
+}
 
 .page-homepage .pane-system-main-menu .menu-main-menu {
   margin: 30px auto;
@@ -1859,4 +1866,30 @@ a:hover {
 }
 .inflow.scroll-to-top-wrapp .positioner .fixed .scrollToTop:hover {
   background: url("../images/go_to_top_btn.png") no-repeat -19px 0px;
+}
+
+form.protected-pages-enter-password input {
+  max-width: 280px;
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #999;
+  padding: 5px 12px 3px 12px;
+  outline: none;
+  margin: 12px auto;
+  font-size: 10px;
+  font-family: "MYRIADPRO-REGULAR";
+  letter-spacing: 1px;
+}
+form.protected-pages-enter-password .form-submit {
+  color: #daa675;
+  background-color: #fff;
+  border: 1px solid #daa675;
+  padding: 6px 15px 4px 15px;
+  text-transform: uppercase;
+  margin-top: 1px;
+  letter-spacing: 1px;
+  font-size: 10px;
+}
+form.protected-pages-enter-password .form-submit:hover {
+  border-color: #999;
 }
