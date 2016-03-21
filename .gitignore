@@ -7,6 +7,7 @@ sites/*/files
 sites/*/private
 
 sites/default/settings.php.save
+sites/default/settings.php
 
 sites/all/themes/xgaby/.sass-cache/*/base.scssc
 sites/all/themes/xgaby/.sass-cache/*/*
